@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>文书大纲</title>
+  <style>
+    *{margin:0;padding:0;}
+		a{text-decoration:none;}
+		ul{list-style:none;}
+    /*导航栏*/
+    #leader{
+			width:100%;height:50px;
+			background:#fff;
+			padding-top:35px;
+			padding-bottom:15px;
+		}
+		#lea{
+			width:1140px;
+			height:34px;
+			margin:0 auto;
+			padding-top:15px;
+			display:flex;
+			justify-content:space-around;
+		}
+		.ul1{
+			display:flex;
+			justify-content:space-around;
+		}
+		#lea img{
+			width:150px;height:62px;
+			padding-right:40px;
+			position: relative;
+			top:-12px;
+		}
+		.ul1>li>a,.ul2 a{
+			width:160px;height:34px;
+			text-align:center;
+			line-height:34px;
+		}
+		.ul1>li>a{
+			color:#000;
+			text-decoration:none;
+			font-size:15px;
+			float:left;
+			border-radius:3px;
+			margin-right:2px;
+		}
+		.ul1 .home,.ul1>li>a:hover,.ul2 a:hover{
+			background:#F39801;
+			color:#fff;
+		}
+		.ul2{
+			display:none;
+			background-color:#fff
+		}
+		._hover:hover .ul2{
+			display:block;
+		}
+		._hover{
+			z-index:999;
+		}
+		.ul2 a{
+			display:block;
+			color:#777;
+			font-size:14px;
+			font-weight:400;
+			border-bottom:1px solid #e7e7e7;
+		}
+    /* 第一部分 */
+    .head_bg{
+      width:100%;
+      text-align:center;
+      padding:30px 0;
+      background-image:url(../image/docOutline/document.png); 
+    }
+    .head_bg>p,.head_bg>h2{
+      color:#fff;
+    }
+    .head_bg>p{
+      font-size:45px;
+      margin:20px 0;
+    }
+    .head_bg>h2{
+      font-size:22px;
+      font-weight:400;
+    }
+    #search_book{
+      text-align:center;
+      margin-top: 25px;
+      margin-bottom: 25px;
+    }
+    #search_book>a{
+      width:194px;height:31px;
+      display:inline-block;
+      border:1px solid #fff;
+      border-radius: 15px;
+      padding:6px 12px;
+      text-align: center;
+    }
+    #search_book>a:hover{
+      background-color: #F39801;
+      border: 1px solid #F39801;
+    }
+    #search_book>a>#words{
+      display: inline-block;
+      font-size:22px;
+      color: #fff;
+      font-weight:bold;
+    }
+    .content{
+      width:1170px;
+      text-align:center;
+      margin:60px auto;
+    }
+    .content>ul{
+      display:flex;
+    }
+    .content>ul>li{
+      width:196px;
+      padding:6px 12px;
+      border:1px solid #F39801;
+    }
+    .content>ul>li:first-child{
+      border-radius:5px 0 0 5px;
+    }
+    .content>ul>li:last-child{
+      border-radius:0 5px 5px 0;
+    }
+    .content>ul>li+li{
+      border-left:0;
+    }
+    .content>ul>li>a{
+      font-size:x-large;
+      font-weight:600;
+      text-align:center;
+      color:#F39801;
+    }
+    .content>ul>li:hover{
+      background-color:#F39801;
+    }
+    .content>ul>li:hover>a{
+      color:#fff;
+    }
+    .cont_word,.cont_word2{
+      width:1170px;
+      margin:0 auto;
+      padding:0 60px;
+    }
+    .no1{
+      padding:20px 80px;
+    }
+    .no1>h3,.no1>p{
+      color:#777;
+    }
+    .no1>h3{
+      font-size:23px;
+      font-weight:normal;
+      border-left:5px solid #F39801;
+      padding-left:15px;
+      margin-bottom:30px; 
+    }
+    .no1>p{
+      font-size:15px;
+      line-height:40px;
+    }
+    .o{
+      width:15px;height:15px;
+      border-radius:50%;
+      background-color:#F39801;
+      display:inline-block;
+      margin-right:5px;
+    }
+    .cont_word2{
+      background-color:#EDECF0;
+      padding:20px 0;
+    }
+  </style>
+</head>
+<body>
+<main>
+  <!--导航栏-->
+	<div id="leader">
+    <div id="lea">
+      <div>
+        <img src="../logo/logo-website-01.png" alt="">
+      </div>
+      <ul class="ul1">
+        <!-- <li>
+          <img src="../logo/logo-website-01.png" alt="">
+        </li> -->
+        <li>
+          <a href="" class="home">首页</a>
+        </li>
+        <li class="_hover">
+          <a href="" >文书服务∨</a>
+          <ul class="ul2">
+            <li><a href=""></a></li>
+            <li><a href="/pro/docOutline.html">文书大纲</a></li>
+            <li><a href="">文书评审</a></li>
+            <li><a href="">文书润色修改</a></li>
+            <li><a href="">文书定制</a></li>
+            <li><a href="">文书翻译</a></li>
+            <li><a href="">文书全管家</a></li>
+            <li><a href="">论文精修</a></li>
+          </ul>
+        </li>
+        <li class="_hover">
+          <a href="">申请服务∨</a>
+          <ul class="ul2">
+            <li><a href=""></a></li>
+            <li><a href="/pro/update.html">全程无忧</a></li>
+            <li><a href="">留学咨询</a></li>
+            <li><a href="">网申填表</a></li>
+          </ul>
+        </li>
+        <li class="_hover">
+          <a href="">中外团队∨</a>
+          <ul class="ul2">
+            <li><a href=""></a></li>
+            <li><a href="/pro/team.html">外国导师</a></li>
+            <li><a href="/pro/team.html">中国导师</a></li>
+          </ul>
+        </li>
+        <li class="_hover">
+          <a href="">案例评价∨</a>
+          <ul class="ul2">
+            <li><a href=""></a></li>
+            <li><a href="/pro/successful.html">成功案例</a></li>
+            <li><a href="">客户评价</a></li>
+          </ul>
+        </li>
+        <li class="_hover">
+          <a href="">免费资源∨</a>
+          <ul class="ul2">
+            <li><a href=""></a></li>
+            <li><a href="/pro/experience.html">经验干货</a></li>
+            <li><a href="/pro/excellentDoc.html">文书锦囊</a></li>
+            <li><a href="">免费咨询</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- header -->
+  <div class="head_bg">
+    <p>文书大纲定制</p>
+    <h2>好的开始是成功的一半</h2>
+    <div id="search_book">
+      <a href="">
+        <span id="words">立即购买</span>
+      </a>
+    </div>
+  </div>
+  <!-- content -->
+  <div class="content">
+    <ul>
+      <li><a href="">文书大纲</a></li>
+      <li><a href="">文书评审</a></li>
+      <li><a href="">文书润色修改</a></li>
+      <li><a href="">文书定制</a></li>
+      <li><a href="">文书翻译</a></li>
+      <li><a href="">文书全管家</a></li>
+    </ul>
+  </div>
+  <div class="cont_word">
+    <div class="no1">
+      <h3>服务简介</h3>
+      <p>文书大纲制定服务由同专业领域的文书导师通过详细沟通，帮助客户提炼个人亮点，理顺个人经历，深入研究目标学校和项目，并制定出一份既体现申请人经历亮点又符合项目要求的文书大纲，指导客户完成文书第一步。</p>
+      <p><span class="o"></span> 文书大纲制定服务的核心是文书写作指导，如果你需要原创一篇完整的申请文书，请点击 文书定制服务。</p>
+      <p><span class="o"></span> 购买文书大纲服务前，需要客户明确申请领域和专业，文书大纲服务将以一所目标学校为基础。如果客户对自身定位和申请专业不清晰，建议先使用过来人留学咨询服务。</p>
+    </div>
+  </div>
+  <div class="cont_word2">
+    <div class="no1">
+      <h3>适合人群</h3>
+      <p>想要自己动手写文书的DIY留学党，希望在写作开端得到专业文书导师的启发和帮助，形成文书基本思路和大纲，在文书导师的指导下自己动笔写文书，在清晰的思路基础上进行文书创作。</p>
+    </div>
+  </div>
+</main>
+</body>
+</html>

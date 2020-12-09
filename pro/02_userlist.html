@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+	</head>
+	<body onload="show()">
+		<div id="msg"></div>
+		<script>
+			function show(){
+				//1.创建xhr异步对象
+				var xhr=new XMLHttpRequest();
+				//4.打开监听，接收响应
+				xhr.onreadystatechange=function(){
+					if(xhr.readyState==4&&xhr.status==200){
+						var result=xhr.responseText;
+						//msg.innerHTML=result;
+						//console.log(result);
+						//把json串解析成js对象
+						var arr=JSON.parse(result);
+						//console.log(arr);
+						var htmlStr=`
+							<table border="1px">
+								<tr>
+									<th>uid</th>
+									<th>uname</th>
+									<th>upwd</th>
+									<th>email</th>
+									<th>phone</th>
+									<th>avatar</th>
+									<th>user_name</th>
+									<th>gender</th>
+								</tr>`;
+						for(var i=0;i<arr.length;i++){
+							var gender="";
+							if(arr[i].gender==1){
+								gender="男";
+							}else if(arr[i].gender==0){
+								gender="女";
+							}else{
+								gender="不详";
+							};
+							htmlStr+=`
+								<tr>
+									<td>${arr[i].uid}</td>
+									<td>${arr[i].uname}</td>
+									<td>${arr[i].upwd}</td>
+									<td>${arr[i].email}</td>
+									<td>${arr[i].phone}</td>
+									<td>${arr[i].avatar}</td>
+									<td>${arr[i].user_name}</td>
+									<td>${gender}</td>
+								</tr>`;
+						}
+						//第三部分
+						htmlStr+="</table>";
+						msg.innerHTML=htmlStr;
+					}
+				}
+				//2.创建请求
+				xhr.open("get","/pro/v1/userlist",true);
+				//3.发送请求
+				xhr.send();
+			}
+		</script>
+	</body>
+</html>

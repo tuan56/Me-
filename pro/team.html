@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    *{margin:0;padding:0;}
+    a{text-decoration:none;}
+    ul>li{list-style:none;}
+    /*注册/登录*/
+    #login{
+      height:40px;
+      background:#EEEDEF;
+      line-height:40px;
+      position:relative;
+    }
+    #login table{
+      position:absolute;
+      right:20px;
+    }
+    #login a{
+      text-decoration:none;
+      color:#000;
+      padding:5px 10px;
+    }
+    /*导航栏*/
+    #leader{
+      width:100%;height:50px;
+      background:#fff;
+      padding-top:35px;
+      padding-bottom:15px;
+    }
+    #lea{
+      width:1140px;
+			height:34px;
+			margin:0 auto;
+			padding-top:15px;
+			display:flex;
+			justify-content:space-around;
+    }
+    .ul1{
+      display:flex;
+			justify-content:space-around;
+    }
+    #lea img{
+      width:150px;height:62px;
+      padding-right:40px;
+      position: relative;
+      top:-12px;
+    }
+    .ul1>li>a,.ul2 a{
+      width:160px;height:34px;
+      text-align:center;
+      line-height:34px;
+    }
+    .ul1>li>a{
+      color:#000;
+      text-decoration:none;
+      font-size:15px;
+      float:left;
+      border-radius:3px;
+      margin-right:2px;
+    }
+    .ul1 .home,.ul1>li>a:hover,.ul2 a:hover{
+      background:#F39801;
+      color:#fff;
+    }
+    .ul2{
+      display:none;
+      background-color:#fff
+    }
+    ._hover:hover .ul2{
+      display:block;
+    }
+    ._hover{
+			z-index:999;
+		}
+    .ul2 a{
+      display:block;
+      color:#777;
+      font-size:14px;
+      font-weight:400;
+      border-bottom:1px solid #e7e7e7;
+    }
+    /*header*/
+    .headerOfDoc{
+      width:100%;height:297px;
+      text-align:center;
+      position: relative;
+      margin:20px auto;
+      background-image:url(../image/team/team.png);
+    }
+    .headerOfDoc>p,.headerOfDoc>h2{
+      color:#fff;
+    }
+    .headerOfDoc>p{
+      font-size: 43px;
+      padding-top:42px;
+    }
+    .headerOfDoc>h2{
+      font-size:22px;
+      font-weight:400;
+      padding: 18px 0;
+    }
+    #select_1{
+      text-align: center;
+    }
+    .headerOfDoc .sel{
+      width:197px;height:34px;
+      padding:6px 12px;
+      border: #fff;
+      border-radius: 4px;
+      color: #777777;
+      text-align: center;
+      margin:8px 15px 0 15px;
+    }
+    #search_book{
+      text-align:center;
+      margin-top: 25px;
+      margin-bottom: 25px;
+    }
+    #search_book>a{
+      width:194px;height:31px;
+      display:inline-block;
+      border:1px solid #fff;
+      border-radius: 15px;
+      padding:6px 12px;
+      text-align: center;
+    }
+    #search_book>a:hover{
+      background-color: #F39801;
+      border: 0;
+    }
+    #search_book>a>#pic,#search_book>a>#words{
+      display: inline-block;
+    }
+    #search_book>a>#pic{
+      width:30px;height:30px;
+      background-image:url(../image/owl-carousel/glyphicons-halflings-white.png);
+      background-repeat:no-repeat;
+      background-size:750px;
+      background-position:-72px 4px;
+    }
+    #search_book>a>#words{
+      font-size:22px;
+      color: #fff;
+      font-weight:bold;
+      position: relative;
+      top:-6px;
+    }
+    .title{
+      width:1170px;
+      margin:50px auto;
+      display:flex;
+    }
+    .title-words{
+      width:585px;height:60px;
+      text-align: center;
+    }
+    .title-words>a{
+      font-size:32px;
+      color:#696969;
+      /* border-bottom:2px solid #F39801; */
+    }
+    .title-words>a:checked{
+      color:#F39801;
+      border-bottom:2px solid #F39801;
+    }
+    .content{
+      width:1170px;
+      margin:0 auto;
+      margin-bottom:50px;
+      display:flex;
+      justify-content:space-around;
+    }
+    .tch{
+      width:586px;height:257px;
+      display:flex;
+      justify-content:space-around;
+    }
+    .tch>.left{
+      padding:0 15px;
+      text-align: center;
+    }
+    .tch>.left>img{
+      width:165px;height:180px;
+      border-radius:50%;
+    }
+    .tch>.left>p{
+      font-size:21px;
+      font-weight:600;
+      margin-top:15px;
+    }
+    .tch>.right{
+      width:361.6px;height:241px;
+      padding:0 15px; 
+    }
+    .tch>.right>p{
+      font-size:13px;
+      line-height:22px;
+      padding-bottom:30px;
+    }
+    .tch>.right span{
+      font-weight:bold;
+    }
+    .lookfor>a{
+      width:80px;height:20px;
+      background-color: #F39801;
+      border:1px solid #fff;
+      border-radius:3px;
+      padding:6px 12px;
+      text-align: center;
+    }
+    .lookfor>a,.lookfor>a>.pic,.lookfor>a>.words{
+      display: inline-block;
+    }
+    .lookfor>a>.pic{
+      width:15px;height:15px;
+      background-image:url(../image/owl-carousel/glyphicons-halflings-white.png);
+      background-repeat:no-repeat;
+      background-size:500px;
+      background-position:-52px 1px;
+    }
+    .lookfor>a>.words{
+      font-size:14px;
+      color: #fff;
+      font-weight:600;
+      position:relative;
+      top:-1px;
+    }
+    .btn{
+      width: 1170px;
+      margin:0 auto;
+      text-align:center;
+    }
+    .btn>a{
+      width:112px;height:20px;
+      background-color:#fff;
+      color:#f39801;
+			font-weight:bold;
+      padding:6px 12px;
+      margin:0 auto;
+      font-size:14px;
+      border:1px solid #F39801;
+      border-radius:4px;
+      display:block;
+    }
+    .btn>a:hover{
+      background-color: #F39801;
+			color:#EEEDEF;
+    }
+  </style>
+</head>
+<body>
+<!--注册/登录栏-->
+<div id="login">
+  <table>
+    <tr>
+      <td><a href="#logbox">注册/登录</a></td>
+      <td><a href="">常见问题</a></td>
+      <td><a href="">English</a></td>
+    </tr>
+  </table>
+</div>
+<!--导航栏-->
+<div id="leader">
+  <div id="lea">
+    <div>
+      <img src="../logo/logo-website-01.png" alt="">
+    </div>
+    <ul class="ul1">
+      <!-- <li>
+        <img src="../logo/logo-website-01.png" alt="">
+      </li> -->
+      <li>
+        <a href="" class="home">首页</a>
+      </li>
+      <li class="_hover">
+        <a href="" >文书服务∨</a>
+        <ul class="ul2">
+          <li><a href=""></a></li>
+          <li><a href="/pro/docOutline.html">文书大纲</a></li>
+          <li><a href="">文书评审</a></li>
+          <li><a href="">文书润色修改</a></li>
+          <li><a href="">文书定制</a></li>
+          <li><a href="">文书翻译</a></li>
+          <li><a href="">文书全管家</a></li>
+          <li><a href="">论文精修</a></li>
+        </ul>
+      </li>
+      <li class="_hover">
+        <a href="">申请服务∨</a>
+        <ul class="ul2">
+          <li><a href=""></a></li>
+          <li><a href="/pro/update.html">全程无忧</a></li>
+          <li><a href="">留学咨询</a></li>
+          <li><a href="">网申填表</a></li>
+        </ul>
+      </li>
+      <li class="_hover">
+        <a href="">中外团队∨</a>
+        <ul class="ul2">
+          <li><a href=""></a></li>
+          <li><a href="/pro/team.html">外国导师</a></li>
+          <li><a href="/pro/team.html">中国导师</a></li>
+        </ul>
+      </li>
+      <li class="_hover">
+        <a href="">案例评价∨</a>
+        <ul class="ul2">
+          <li><a href=""></a></li>
+          <li><a href="/pro/successful.html">成功案例</a></li>
+          <li><a href="">客户评价</a></li>
+        </ul>
+      </li>
+      <li class="_hover">
+        <a href="">免费资源∨</a>
+        <ul class="ul2">
+          <li><a href=""></a></li>
+          <li><a href="/pro/experience.html">经验干货</a></li>
+          <li><a href="/pro/excellentDoc.html">文书锦囊</a></li>
+          <li><a href="">免费咨询</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+<!--header-->
+<div class="headerOfDoc">
+  <p>中美导师团队</p>
+  <h2>为你的申请每一个环节保驾护航</h2>
+  <div id="select_1">
+    <select class="sel" name="" id="categoryDoc">
+      <option value="" selected>申请国家</option>
+      <option value="">不限国家</option>
+      <option value="">美国</option>
+      <option value="">加拿大</option>
+      <option value="">英国</option>
+      <option value="">中国香港</option>
+      <option value="">新加坡</option>
+      <option value="">澳大利亚</option>
+      <option value="">其他</option>
+    </select>
+    <select class="sel" name="" id="">
+      <option value="" selected>申请学位</option>
+      <option value="">不限学位</option>
+      <option value="">本科</option>
+      <option value="">硕士</option>
+      <option value="">博士</option>
+      <option value="">其他</option>
+    </select>
+    <select class="sel" name="" id="">
+      <option value="" selected>申请领域</option>
+      <option value="">不限领域</option>
+      <option value="">Business</option>
+      <option value="">Science & Engineering</option>
+      <option value="">Social Sciences, Humanities & Liberal Arts</option>
+      <option value="">Law</option>
+      <option value="">Health & Medicine</option>
+    </select>
+    <select class="sel" name="" id="">
+      <option value="" selected>服务类型</option>
+      <option value="">不限类型</option>
+      <option value="">留学咨询</option>
+      <option value="">文书润色修改</option>
+      <option value="">文书评审</option>
+      <option value="">文书大纲制定</option>
+      <option value="">文书定制</option>
+      <option value="">文书全管家</option>
+      <option value="">论文精修</option>
+    </select>
+  </div>
+  <div id="search_book">
+    <a href="">
+      <span id="pic"></span>
+      <span id="words">&nbsp;搜索导师</span>
+    </a>
+  </div>
+</div>
+<!-- content -->
+<main>
+  <div class="title">
+    <div class="title-words"><a href="">外国导师</a></div>
+    <div class="title-words"><a href="">中国导师</a></div>
+  </div>
+  <div id="foreign_tch">
+    <div class="content">
+      <div class="tch">
+        <div class="left">
+          <img src="../firstpaper/20161028044735442ff3.jpg" alt="">
+          <p>Gabs</p>
+        </div>
+        <div class="right">
+          <p><span>Providing Services : </span>Onetime Editing, Interactive Editing, Proofreading, Outline Building, and Essay Review.</p>
+          <p><span>Spotlights : </span>Chief Editor of Me Education. Edited for more than 600 clients, our students' all-time favorite. • 10 years of tutoring/editing experience in writing with international students • Harvard Kennedy Sc...</p>
+          <div class="lookfor">
+            <a href="">
+              <span class="pic"></span>
+              <span class="words">查看详情</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="tch">
+        <div class="left">
+          <img src="../firstpaper/201610280423378-3-88.jpg" alt="">
+          <p>Gabs</p>
+        </div>
+        <div class="right">
+          <p><span>Providing Services : </span>Onetime Editing, Interactive Editing, Mock interview, Proofreading, Outline Building, and Essay Review.</p>
+          <p><span>Spotlights : </span> Postdoctoral Fellow at Stanford Humanities Center and Communications Director of Center for Ethics in Society • Experienced editor with Me Education for over three years • Professional experience in...</p>
+          <div class="lookfor">
+            <a href="">
+              <span class="pic"></span>
+              <span class="words">查看详情</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="content">
+      <div class="tch">
+        <div class="left">
+          <img src="../firstpaper/20161028044735442ff3.jpg" alt="">
+          <p>Gabs</p>
+        </div>
+        <div class="right">
+          <p><span>Providing Services : </span>Onetime Editing, Interactive Editing, Proofreading, Outline Building, and Essay Review.</p>
+          <p><span>Spotlights : </span>Chief Editor of Me Education. Edited for more than 600 clients, our students' all-time favorite. • 10 years of tutoring/editing experience in writing with international students • Harvard Kennedy Sc...</p>
+          <div class="lookfor">
+            <a href="">
+              <span class="pic"></span>
+              <span class="words">查看详情</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="tch">
+        <div class="left">
+          <img src="../firstpaper/201610280423378-3-88.jpg" alt="">
+          <p>Gabs</p>
+        </div>
+        <div class="right">
+          <p><span>Providing Services : </span>Onetime Editing, Interactive Editing, Mock interview, Proofreading, Outline Building, and Essay Review.</p>
+          <p><span>Spotlights : </span> Postdoctoral Fellow at Stanford Humanities Center and Communications Director of Center for Ethics in Society • Experienced editor with Me Education for over three years • Professional experience in...</p>
+          <div class="lookfor">
+            <a href="">
+              <span class="pic"></span>
+              <span class="words">查看详情</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="content">
+      <div class="tch">
+        <div class="left">
+          <img src="../firstpaper/20161028044735442ff3.jpg" alt="">
+          <p>Gabs</p>
+        </div>
+        <div class="right">
+          <p><span>Providing Services : </span>Onetime Editing, Interactive Editing, Proofreading, Outline Building, and Essay Review.</p>
+          <p><span>Spotlights : </span>Chief Editor of Me Education. Edited for more than 600 clients, our students' all-time favorite. • 10 years of tutoring/editing experience in writing with international students • Harvard Kennedy Sc...</p>
+          <div class="lookfor">
+            <a href="">
+              <span class="pic"></span>
+              <span class="words">查看详情</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="tch">
+        <div class="left">
+          <img src="../firstpaper/201610280423378-3-88.jpg" alt="">
+          <p>Gabs</p>
+        </div>
+        <div class="right">
+          <p><span>Providing Services : </span>Onetime Editing, Interactive Editing, Mock interview, Proofreading, Outline Building, and Essay Review.</p>
+          <p><span>Spotlights : </span> Postdoctoral Fellow at Stanford Humanities Center and Communications Director of Center for Ethics in Society • Experienced editor with Me Education for over three years • Professional experience in...</p>
+          <div class="lookfor">
+            <a href="">
+              <span class="pic"></span>
+              <span class="words">查看详情</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="china_tch">
+    <div class="content">
+      <div class="tch">
+        <div class="left">
+          <img src="../firstpaper/20161028044735442ff3.jpg" alt="">
+          <p>Gabs</p>
+        </div>
+        <div class="right">
+          <p><span>Providing Services : </span>Onetime Editing, Interactive Editing, Proofreading, Outline Building, and Essay Review.</p>
+          <p><span>Spotlights : </span>Chief Editor of Me Education. Edited for more than 600 clients, our students' all-time favorite. • 10 years of tutoring/editing experience in writing with international students • Harvard Kennedy Sc...</p>
+          <div class="lookfor">
+            <a href="">
+              <span class="pic"></span>
+              <span class="words">查看详情</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="tch">
+        <div class="left">
+          <img src="../firstpaper/201610280423378-3-88.jpg" alt="">
+          <p>Gabs</p>
+        </div>
+        <div class="right">
+          <p><span>Providing Services : </span>Onetime Editing, Interactive Editing, Mock interview, Proofreading, Outline Building, and Essay Review.</p>
+          <p><span>Spotlights : </span> Postdoctoral Fellow at Stanford Humanities Center and Communications Director of Center for Ethics in Society • Experienced editor with Me Education for over three years • Professional experience in...</p>
+          <div class="lookfor">
+            <a href="">
+              <span class="pic"></span>
+              <span class="words">查看详情</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="content">
+      <div class="tch">
+        <div class="left">
+          <img src="../firstpaper/20161028044735442ff3.jpg" alt="">
+          <p>Gabs</p>
+        </div>
+        <div class="right">
+          <p><span>Providing Services : </span>Onetime Editing, Interactive Editing, Proofreading, Outline Building, and Essay Review.</p>
+          <p><span>Spotlights : </span>Chief Editor of Me Education. Edited for more than 600 clients, our students' all-time favorite. • 10 years of tutoring/editing experience in writing with international students • Harvard Kennedy Sc...</p>
+          <div class="lookfor">
+            <a href="">
+              <span class="pic"></span>
+              <span class="words">查看详情</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="tch">
+        <div class="left">
+          <img src="../firstpaper/201610280423378-3-88.jpg" alt="">
+          <p>Gabs</p>
+        </div>
+        <div class="right">
+          <p><span>Providing Services : </span>Onetime Editing, Interactive Editing, Mock interview, Proofreading, Outline Building, and Essay Review.</p>
+          <p><span>Spotlights : </span> Postdoctoral Fellow at Stanford Humanities Center and Communications Director of Center for Ethics in Society • Experienced editor with Me Education for over three years • Professional experience in...</p>
+          <div class="lookfor">
+            <a href="">
+              <span class="pic"></span>
+              <span class="words">查看详情</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="content">
+      <div class="tch">
+        <div class="left">
+          <img src="../firstpaper/20161028044735442ff3.jpg" alt="">
+          <p>Gabs</p>
+        </div>
+        <div class="right">
+          <p><span>Providing Services : </span>Onetime Editing, Interactive Editing, Proofreading, Outline Building, and Essay Review.</p>
+          <p><span>Spotlights : </span>Chief Editor of Me Education. Edited for more than 600 clients, our students' all-time favorite. • 10 years of tutoring/editing experience in writing with international students • Harvard Kennedy Sc...</p>
+          <div class="lookfor">
+            <a href="">
+              <span class="pic"></span>
+              <span class="words">查看详情</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="tch">
+        <div class="left">
+          <img src="../firstpaper/201610280423378-3-88.jpg" alt="">
+          <p>Gabs</p>
+        </div>
+        <div class="right">
+          <p><span>Providing Services : </span>Onetime Editing, Interactive Editing, Mock interview, Proofreading, Outline Building, and Essay Review.</p>
+          <p><span>Spotlights : </span> Postdoctoral Fellow at Stanford Humanities Center and Communications Director of Center for Ethics in Society • Experienced editor with Me Education for over three years • Professional experience in...</p>
+          <div class="lookfor">
+            <a href="">
+              <span class="pic"></span>
+              <span class="words">查看详情</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="btn">
+    <a href="javascript:;">查看更多导师团队</a>
+  </div>
+</main>
+</body>
+</html>

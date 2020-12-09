@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>文书锦囊</title>
+  <style>
+    *{margin:0;padding:0;}
+    a{text-decoration:none;}
+    ul>li{list-style:none;}
+		/*注册/登录*/
+		#login{
+			height:40px;
+			background:#EEEDEF;
+			line-height:40px;
+			position:relative;
+		}
+		#login table{
+			position:absolute;
+			right:20px;
+		}
+		#login a{
+			text-decoration:none;
+			color:#000;
+			padding:5px 10px;
+		}
+		/*导航栏*/
+		#leader{
+			width:100%;height:50px;
+			background:#fff;
+			padding-top:35px;
+			padding-bottom:15px;
+		}
+		#lea{
+			width:1140px;
+			height:34px;
+			margin:0 auto;
+			padding-top:15px;
+			display:flex;
+			justify-content:space-around;
+		}
+		.ul1{
+			display:flex;
+			justify-content:space-around;
+		}
+		#lea img{
+			width:150px;height:62px;
+			padding-right:40px;
+			position: relative;
+			top:-12px;
+		}
+		.ul1>li>a,.ul2 a{
+			width:160px;height:34px;
+			text-align:center;
+			line-height:34px;
+		}
+		.ul1>li>a{
+			color:#000;
+			text-decoration:none;
+			font-size:15px;
+			float:left;
+			border-radius:3px;
+			margin-right:2px;
+		}
+		.ul1 .home,.ul1>li>a:hover,.ul2 a:hover{
+			background:#F39801;
+			color:#fff;
+		}
+		.ul2{
+			display:none;
+			background-color:#fff
+		}
+		._hover:hover .ul2{
+			display:block;
+		}
+		._hover{
+			z-index:999;
+		}
+		.ul2 a{
+			display:block;
+			color:#777;
+			font-size:14px;
+			font-weight:400;
+			border-bottom:1px solid #e7e7e7;
+		}
+    /*header*/
+    .headerOfDoc{
+      width:100%;height:297px;
+      text-align:center;
+      position: relative;
+      margin:20px auto;
+      margin-bottom:100px;
+      background-image:url(../image/excellentDoc/excellent.png);
+    }
+    .headerOfDoc>p,.headerOfDoc>h2{
+      color:#fff;
+      padding-top: 12px;
+    }
+    .headerOfDoc>p{
+      font-size: 43px;
+      padding-bottom: 12px;
+    }
+    .headerOfDoc>h2{
+      font-size:22px;
+      font-weight:400;
+    }
+    #select_1{
+      text-align: center;
+    }
+    .headerOfDoc .sel{
+      width:197px;height:34px;
+      padding:6px 12px;
+      border: #fff;
+      border-radius: 4px;
+      color: #777777;
+      text-align: center;
+      margin:8px 15px 0 15px;
+    }
+    #search_book{
+      text-align:center;
+      margin-top: 25px;
+      margin-bottom: 25px;
+    }
+    #search_book>a{
+      width:194px;height:31px;
+      display:inline-block;
+      border:1px solid #fff;
+      border-radius: 15px;
+      padding:6px 12px;
+      text-align: center;
+    }
+    #search_book>a:hover{
+      background-color: #F39801;
+      border: 0;
+    }
+    #search_book>a>#pic,#search_book>a>#words{
+      display: inline-block;
+    }
+    #search_book>a>#pic{
+      width:30px;height:30px;
+      background-image:url(../image/owl-carousel/glyphicons-halflings-white.png);
+      background-repeat:no-repeat;
+      background-size:750px;
+      background-position:-72px 4px;
+    }
+    #search_book>a>#words{
+      font-size:22px;
+      color: #fff;
+      font-weight:bold;
+      position: relative;
+      top:-6px;
+    }
+    /*first model*/
+    .all{
+      width:925px;height:360px;
+      background-color: #EDECF0;
+      margin:0 auto 30px auto;
+      padding-left:60px;
+    }
+    .pos{
+      width:925px;height:360px;
+      position:absolute;
+    }
+    .all .left,.all .right{
+      display: inline-block;
+      position: relative;
+    }
+    .all .left{
+      width:193px;height:300px;
+      top:10px;
+    }
+    .all .left>div{
+      height:193px;
+      padding-bottom: 45px;
+    }
+    .all .left img{
+      width:193px;height:193px;
+      border-radius:50%;
+      position:absolute;
+    }
+    .all .left p{
+      font-size: 22px;
+      color: #fff;
+      position:relative;
+      top:83px;left:46px;
+    }
+    .all .left>a{
+      width:170px;height:34px;
+      display: block;
+      border:1px solid #F39801;
+      border-radius: 3px;
+      color:#F39801;
+      font-size: 24px;
+      font-weight: 600;
+      text-align: center;
+      margin:0 auto;
+      padding:6px 12px;
+    }
+    .all .right{
+      width:492px;height:338px;
+      padding-left:30px;
+      top:20px;
+    }
+    .all .right>h3{
+      font-size: 22px;
+      color:#F39801;
+      font-weight: normal;
+      margin:20px auto;
+    }
+    .all .right>p{
+      font-size: 18px;
+      color:#777777;
+      margin:10px auto;
+    }
+    .all .right>hr{
+      border-top:1px #F39801 dashed;
+      margin:25px auto;
+    }
+    .all .right>h6{
+      font-size:15px;
+      color:#777777;
+      font-weight:normal;
+      margin-top:25px;
+    }
+    .all>.pos>img{
+      position:relative;
+      bottom:234px;right:-80px;
+    }
+    /*关于Me留学*/
+		.footer_bg{
+			width:100%;height:276px;
+			padding:90px 0;
+			background:#3F4451;
+			display:flex;
+			justify-content:space-around;
+		}
+		.footer_bg>ul>li>h3{
+			font-size:21px;
+			color:#fff;
+			margin-top:15px;
+			margin-bottom:35px;
+		}
+		.footer_bg>ul>li>a{
+			font-size:15px;
+			color:#999eab;
+			line-height:2;
+		}
+		.right img{
+			width:99px;height:119px;
+		}
+		/*end*/
+		#end{
+			width:100%;height:86px;
+			background:#363B48;
+			padding-top:15px;
+		}
+		#end>h4{
+			text-align:center;
+			color:#fff;
+			font-weight:300;
+			line-height:36px;
+		}
+    </style>
+</head>
+<body>
+  <!--注册/登录栏-->
+	<div id="login">
+    <table>
+      <tr>
+        <td><a href="#logbox">注册/登录</a></td>
+        <td><a href="">常见问题</a></td>
+        <td><a href="">English</a></td>
+      </tr>
+    </table>
+  </div>
+  <!--导航栏-->
+	<div id="leader">
+    <div id="lea">
+      <div>
+        <img src="../logo/logo-website-01.png" alt="">
+      </div>
+      <ul class="ul1">
+        <!-- <li>
+          <img src="../logo/logo-website-01.png" alt="">
+        </li> -->
+        <li>
+          <a href="" class="home">首页</a>
+        </li>
+        <li class="_hover">
+          <a href="" >文书服务∨</a>
+          <ul class="ul2">
+            <li><a href=""></a></li>
+            <li><a href="/pro/docOutline.html">文书大纲</a></li>
+            <li><a href="">文书评审</a></li>
+            <li><a href="">文书润色修改</a></li>
+            <li><a href="">文书定制</a></li>
+            <li><a href="">文书翻译</a></li>
+            <li><a href="">文书全管家</a></li>
+            <li><a href="">论文精修</a></li>
+          </ul>
+        </li>
+        <li class="_hover">
+          <a href="">申请服务∨</a>
+          <ul class="ul2">
+            <li><a href=""></a></li>
+            <li><a href="/pro/update.html">全程无忧</a></li>
+            <li><a href="">留学咨询</a></li>
+            <li><a href="">网申填表</a></li>
+          </ul>
+        </li>
+        <li class="_hover">
+          <a href="">中外团队∨</a>
+          <ul class="ul2">
+            <li><a href=""></a></li>
+            <li><a href="/pro/team.html">外国导师</a></li>
+            <li><a href="/pro/team.html">中国导师</a></li>
+          </ul>
+        </li>
+        <li class="_hover">
+          <a href="">案例评价∨</a>
+          <ul class="ul2">
+            <li><a href=""></a></li>
+            <li><a href="/pro/successful.html">成功案例</a></li>
+            <li><a href="">客户评价</a></li>
+          </ul>
+        </li>
+        <li class="_hover">
+          <a href="">免费资源∨</a>
+          <ul class="ul2">
+            <li><a href=""></a></li>
+            <li><a href="/pro/experience.html">经验干货</a></li>
+            <li><a href="/pro/excellentDoc.html">文书锦囊</a></li>
+            <li><a href="">免费咨询</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!--header-->
+  <div class="headerOfDoc">
+    <p>文书锦囊</p>
+    <h2>查看热门专业申请文书范例</h2>
+    <h2>锦囊妙计启发更佳文书创作</h2>
+    <div id="select_1">
+      <select class="sel" name="" id="categoryDoc">
+        <option value="" selected>文书类型</option>
+        <option value="">不限类型</option>
+        <option value="">陈述类文书</option>
+        <option value="">个人简历</option>
+        <option value="">推荐信</option>
+      </select>
+      <select class="sel" name="" id="">
+        <option value="" selected>申请领域</option>
+        <option value="">不限领域</option>
+        <option value="">Business</option>
+        <option value="">Science & Engineering</option>
+        <option value="">Social Sciences, Humanities & Liberal Arts</option>
+        <option value="">Law</option>
+        <option value="">Health & Medicine</option>
+      </select>
+      <select class="sel" name="" id="">
+        <option value="" selected>申请专业</option>
+        <option value="">不限专业</option>
+        <option value="">Accounting</option>
+        <option value="">Business Analytics</option>
+        <option value="">Finance; MFE; Mathematical Finance</option>
+        <option value="">Hospitality Management</option>
+        <option value="">HR Management</option>
+        <option value="">International Business</option>
+        <option value="">Marketing</option>
+        <option value="">MBA; Management</option>
+        <option value="">Other</option>
+      </select>
+    </div>
+    <div id="search_book">
+      <a href="">
+        <span id="pic"></span>
+        <span id="words">&nbsp;搜索文书</span>
+      </a>
+    </div>
+  </div>
+  <!--first model-->
+  <div class="all">
+    <div class="pos">
+      <div class="left">
+        <div>
+          <img src="../image/excellentDoc/心理学sop.png" alt="">
+          <p>心理学sop</p>
+        </div> 
+        <a href="">阅读全文</a>
+      </div>
+      <div class="right">
+        <h3>教育心理学博士申请文书</h3>
+        <p>文书类型：Personal Statement</p>
+        <p>申请专业：Psychology</p>
+        <p>申请学校：University of Michigan</p>
+        <p>毕业学校：北京师范大学</p>
+        <p>毕业专业：心理学</p>
+        <hr>
+        <h6>涉及内容：研究经历、海外经历、选校原因</h6>
+      </div>
+      <img src="../image/excellentDoc/hurryRead.png" alt="">
+    </div>
+  </div>
+  <div class="all">
+    <div class="pos">
+      <div class="left">
+        <div>
+          <img src="../image/excellentDoc/教育心理ps.jpg" alt="">
+          <p>教育心理PS</p>
+        </div> 
+        <a href="">阅读全文</a>
+      </div>
+      <div class="right">
+        <h3>教育心理硕士申请文书</h3>
+        <p>文书类型：Personal Statement</p>
+        <p>申请专业：Education; TESOL</p>
+        <p>申请学校：University of Wisconsin</p>
+        <p>毕业学校：/</p>
+        <p>毕业专业：/</p>
+        <hr>
+        <h6>涉及内容：兴趣起源；实习经历；研究方向；未来规划</h6>
+      </div>
+      <img src="../image/excellentDoc/loginRead.png" alt="">
+    </div>
+  </div>
+  <div class="all">
+    <div class="pos">
+      <div class="left">
+        <div>
+          <img src="../image/excellentDoc/数据经济ps.jpg" alt="">
+          <p>数据经济PS</p>
+        </div> 
+        <a href="">阅读全文</a>
+      </div>
+      <div class="right">
+        <h3>数据经济硕士申请文书</h3>
+        <p>文书类型：Personal Statement</p>
+        <p>申请专业：Economics</p>
+        <p>申请学校：University of Southern California</p>
+        <p>毕业学校：/</p>
+        <p>毕业专业：/</p>
+        <hr>
+        <h6>涉及内容：教育背景；实习经历；参赛经历；职业规划；选校原因</h6>
+      </div>
+      <img src="../image/excellentDoc/loginRead.png" alt="">
+    </div>
+  </div>
+  <div class="all">
+    <div class="pos">
+      <div class="left">
+        <div>
+          <img src="../image/excellentDoc/艺术管理ps.jpg" alt="">
+          <p>艺术管理PS</p>
+        </div> 
+        <a href="">阅读全文</a>
+      </div>
+      <div class="right">
+        <h3>艺术管理硕士申请文书</h3>
+        <p>文书类型：Personal Statement</p>
+        <p>申请专业：Design; Music; Arts; Film</p>
+        <p>申请学校：University of Pennsylvania</p>
+        <p>毕业学校：/</p>
+        <p>毕业专业：整合营销传播</p>
+        <hr>
+        <h6>涉及内容：自媒体经历；教育经历；志愿者经历；工作经历；课程设置</h6>
+      </div>
+      <img src="../image/excellentDoc/loginRead.png" alt="">
+    </div>
+  </div>
+  <div class="all">
+    <div class="pos">
+      <div class="left">
+        <div>
+          <img src="../image/excellentDoc/广告硕士ps.jpg" alt="">
+          <p>广告硕士PS</p>
+        </div> 
+        <a href="">阅读全文</a>
+      </div>
+      <div class="right">
+        <h3>广告硕士申请文书</h3>
+        <p>文书类型：Personal Statement</p>
+        <p>申请专业：Communication; Journalism; Media; Advertising; PR</p>
+        <p>申请学校：University of Illinois at Urbana-Champaign</p>
+        <p>毕业学校：/</p>
+        <p>毕业专业：/</p>
+        <hr>
+        <h6>涉及内容：实习经历；兴趣起源；学习经历；选校原因；职业规划</h6>
+      </div>
+      <img src="../image/excellentDoc/loginRead.png" alt="">
+    </div>
+  </div>
+  <div class="all">
+    <div class="pos">
+      <div class="left">
+        <div>
+          <img src="../image/excellentDoc/视觉文化ps.jpg" alt="">
+          <p>视觉文化PS</p>
+        </div> 
+        <a href="">阅读全文</a>
+      </div>
+      <div class="right">
+        <h3>视觉文化硕士申请文书</h3>
+        <p>文书类型：Personal Statement</p>
+        <p>申请专业：Design; Music; Arts; Film</p>
+        <p>申请学校：University College London</p>
+        <p>毕业学校：/</p>
+        <p>毕业专业：人类学</p>
+        <hr>
+        <h6>涉及内容：跨专业；兴趣起源；海外交换；研究经历；选校原因；职业规划</h6>
+      </div>
+      <img src="../image/excellentDoc/loginRead.png" alt="">
+    </div>
+  </div>
+  <div class="all">
+    <div class="pos">
+      <div class="left">
+        <div>
+          <img src="../image/excellentDoc/教育硕士Essay.jpg" alt="">
+          <p>教育硕士Essay</p>
+        </div> 
+        <a href="">阅读全文</a>
+      </div>
+      <div class="right">
+        <h3>教育硕士申请文书</h3>
+        <p>文书类型：Personal Statement</p>
+        <p>申请专业：Education; TESOL</p>
+        <p>申请学校：The University of Sydney</p>
+        <p>毕业学校：/</p>
+        <p>毕业专业：/</p>
+        <hr>
+        <h6>涉及内容：专业理由；兴趣起源；学习经历；课外活动；工作经历</h6>
+      </div>
+      <img src="../image/excellentDoc/loginRead.png" alt="">
+    </div>
+  </div>        
+  <!-- 关于Me留学 -->
+  <div class="footer_bg">
+    <ul class="left">
+      <li><h3>关于Me留学</h3></li>
+      <li><a href="">关于我们</a></li>
+      <li><a href="">加入我们</a></li>
+      <li><a href="">成为导师</a></li>
+      <li><a href="">校园大使</a></li>
+      <li><a href="">官方合作</a></li>
+      <li><a href="">隐私条款</a></li>
+    </ul>
+    <ul class="center">
+      <li><h3>发现精彩</h3></li>
+      <li><a href="">经验干货</a></li>
+      <li><a href="">文书锦囊</a></li>
+      <li><a href="">案例评价</a></li>
+      <li><a href="">免费咨询</a></li>
+      <li><a href="">优惠折扣</a></li>
+      <li><a href="">推荐有礼</a></li>
+    </ul>
+    <ul class="right">
+      <li><h3>联系我们</h3></li>
+      <li><a>美国 +1-626-232-0500</a></li>
+      <li><a>中国 400 0066 532</a></li>
+      <li>
+      <img src="../image/index/wechat1.jpg" alt="">
+      <img src="../image/index/wechat2.jpg" alt="">
+      </li>
+    </ul>
+  </div>
+  <!--end-->
+  <div id="end">
+    <h4>鲁ICP备16032272号</h4>
+    <h4>© 2017 Me Education, LLC. All Rights Reserved.</h4>
+  </div>
+</body>
+</html>

@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Me留学官网</title>
+	<style>
+		*{margin:0;padding:0;}
+		a{text-decoration:none;}
+		ul{list-style:none;}
+		/*注册/登录*/
+		#login{
+			height:40px;
+			background:#EEEDEF;
+			line-height:40px;
+			position:relative;
+		}
+		#login table{
+			position:absolute;
+			right:20px;
+		}
+		#login a{
+			text-decoration:none;
+			color:#000;
+			padding:5px 10px;
+		}
+		/*导航栏*/
+		#leader{
+			width:100%;height:50px;
+			background:#fff;
+			padding-top:35px;
+			padding-bottom:15px;
+		}
+		#lea{
+			width:1140px;
+			height:34px;
+			margin:0 auto;
+			padding-top:15px;
+			display:flex;
+			justify-content:space-around;
+		}
+		.ul1{
+			display:flex;
+			justify-content:space-around;
+		}
+		#lea img{
+			width:150px;height:62px;
+			padding-right:40px;
+			position: relative;
+			top:-12px;
+		}
+		.ul1>li>a,.ul2 a{
+			width:160px;height:34px;
+			text-align:center;
+			line-height:34px;
+		}
+		.ul1>li>a{
+			color:#000;
+			text-decoration:none;
+			font-size:15px;
+			float:left;
+			border-radius:3px;
+			margin-right:2px;
+		}
+		.ul1 .home,.ul1>li>a:hover,.ul2 a:hover{
+			background:#F39801;
+			color:#fff;
+		}
+		.ul2{
+			display:none;
+			background-color:#fff
+		}
+		._hover:hover .ul2{
+			display:block;
+		}
+		._hover{
+			z-index:999;
+		}
+		.ul2 a{
+			display:block;
+			color:#777;
+			font-size:14px;
+			font-weight:400;
+			border-bottom:1px solid #e7e7e7;
+		}
+		/*轮播图片*/
+		.lunbotu{
+			width: 1170px;
+			overflow:hidden;
+			margin: 0 auto;
+			position: relative;
+		
+		}
+		.lunbotu li{
+			
+		}
+		#ul_imgs.transition{
+			transition:all .5s linear;
+		}
+		#ul_imgs{
+			display:flex;
+		}
+		#ul_imgs img{
+			width:1170px;
+		}
+		#btn_left,#btn_right{
+		width:60px;
+		height:60px;
+		position:absolute;
+		top:45%;
+		background-repeat:no-repeat;
+		background-position:center;
+		cursor:pointer;
+		}
+		#btn_left{
+			left:20px;
+			background-image:url(../image/index/left_ar.png);
+		}
+		#btn_right{
+			right:20px;
+			background-image:url(../image/index/right_ar.png);
+		}
+		#btn_left:hover,#btn_right:hover{
+			background-size:40px 70px;
+			background-color:rgba(232,232,232,.5);
+		}
+		/*我们的服务*/
+		#server{
+			width:100%;height:642px;
+		}
+		#search1{
+			width:100%;height:80px;
+			background:#B2B2B2;
+			margin:-5px auto 0 auto;
+			position:relative;
+			text-align: center;
+			line-height: 80px;
+		}
+		#search1 input{
+			width:673px;height:34px;
+			border:0;
+		}
+		.hh2{
+			font-size:28px;
+			font-weight:bold;
+			text-align:center;
+			color:#363a47;
+			padding:70px 0;
+		}
+		#server .ul1{
+			width:1140px;height:186px;
+			margin:0 auto;
+			list-style:none;
+			float:flex;
+			justify-content:space-around;
+		}
+		#server .ul1>li{
+			text-align:center;
+			margin:3.0px 0;
+		}
+		.server1{
+			font-size:18px;
+			color:#363a47;
+			font-weight:bold;
+			padding:15px 0;
+		}
+		/*我们的团队*/
+		#team{
+			width:100%;height:709px;
+			background:#EDECF0;
+			text-align:center;
+		}
+		#team h2{padding-bottom:50px;}
+		#team a{
+			font-size:18px;
+			color:#696969;
+			border-bottom:2px solid #f39801;
+			padding:10px 30px;
+		}
+		#team>.ul1{
+			width:1140px;
+			padding-top:50px;
+			margin:0 auto;
+		}
+		#team>.ul1>li{
+			width:210px;height:350px;
+			background:#fff;
+			margin:5px;
+			padding-top:10px;
+		}
+		#team>.ul1>li>img{
+			width:180px;height:180px;
+			border-radius:50%;
+		}
+		#team>#ul2{
+			display:none;
+		}
+		#team>#look{
+			width:84px;height:20px;
+			padding:6px 12px;
+			font-size:14px;
+			text-align:center;
+			vertical-align:middle;
+			border:1px solid #f39801;
+			border-radius:5px;
+			color:#f39801;
+			display:inline-block;
+			margin:35px;
+		}
+		#team>#look:hover{
+			background-color:#f39801;
+			color:#fff;
+		}
+		/*更多资源*/
+		#more-res{
+			width:100%;height:610px;
+		}
+		#more-res>div{
+			text-align:center;
+		}
+		#more-res>div>a{
+			width:267px;height:354px;
+			display:inline-block;
+			border:1px solid #ddd;
+			border-radius:5px;
+			position:relative;
+			padding:5px 5px;
+			margin:0 7px;
+		}
+		#more-res>div>a>div{
+			position:absolute;
+			bottom:35px;left:55px;
+		}
+		#more-res img{
+			width:267px;height:354px;
+			border-radius:5px;
+		}
+		.maskContent>h2,.maskContent>p{
+			color:rgba(232,241,240,.9);
+		}
+		.maskContent>p{
+			padding-top:30px;
+			font-size:18px;
+		}
+		/*评价*/
+		#assess{
+			width:100%;height:670px;
+			background:#EDECF0;
+		}
+		#assess>.hh2>a{
+			text-decoration:underline;
+			color:#363a47;
+		}
+		#stu-say{
+			width:1140px;height:224px;
+			margin:auto;
+		}
+		#say1{
+			width:1140px;height:179px;
+		}
+		.stu-ass{
+			width:500px;height:111px;
+			display:inline-block;
+			margin:20px 30px;
+		}
+		.stu-ass>img{
+			width:75px;height:75px;
+			border-radius:50%;
+			margin:5px 15px 6px 0;
+		}
+		.stu-ass>div{
+			width:400px;height:80px;
+			display:block;
+			float:right;
+		}
+		.stu-ass p{
+			color:#777;
+			font-size:15px;
+			line-height:30px;
+			font-family:Open Sans;
+		}
+		.stu-ass h4{
+			padding-top:10px;
+		}
+		/*关于Me留学*/
+		.footer_bg{
+			width:100%;height:276px;
+			padding:90px 0;
+			background:#3F4451;
+			display:flex;
+			justify-content:space-around;
+		}
+		.footer_bg>ul>li>h3{
+			font-size:21px;
+			color:#fff;
+			margin-top:15px;
+			margin-bottom:35px;
+		}
+		.footer_bg>ul>li>a{
+			font-size:15px;
+			color:#999eab;
+			line-height:2;
+		}
+		.right img{
+			width:99px;height:119px;
+		}
+		/*end*/
+		#end{
+			width:100%;height:86px;
+			background:#363B48;
+			padding-top:15px;
+		}
+		#end>h4{
+			text-align:center;
+			color:#fff;
+			font-weight:300;
+			line-height:36px;
+		}
+	</style>
+</head>
+<body>
+	<!--注册/登录栏-->
+	<div id="login">
+		<table>
+			<tr>
+				<td><a href="#logbox">注册/登录</a></td>
+				<td><a href="">常见问题</a></td>
+				<td><a href="">English</a></td>
+			</tr>
+		</table>
+	</div>
+	<!--导航栏-->
+	<div id="leader">
+		<div id="lea">
+			<div>
+				<img src="../logo/logo-website-01.png" alt="">
+			</div>
+			<ul class="ul1">
+				<!-- <li>
+					<img src="../logo/logo-website-01.png" alt="">
+				</li> -->
+				<li>
+					<a href="" class="home">首页</a>
+				</li>
+				<li class="_hover">
+					<a href="" >文书服务∨</a>
+					<ul class="ul2">
+						<li><a href=""></a></li>
+						<li><a href="/pro/docOutline.html">文书大纲</a></li>
+						<li><a href="">文书评审</a></li>
+						<li><a href="">文书润色修改</a></li>
+						<li><a href="">文书定制</a></li>
+						<li><a href="">文书翻译</a></li>
+						<li><a href="">文书全管家</a></li>
+						<li><a href="">论文精修</a></li>
+					</ul>
+				</li>
+				<li class="_hover">
+					<a href="">申请服务∨</a>
+					<ul class="ul2">
+						<li><a href=""></a></li>
+						<li><a href="/pro/update.html">全程无忧</a></li>
+						<li><a href="">留学咨询</a></li>
+						<li><a href="">网申填表</a></li>
+					</ul>
+				</li>
+				<li class="_hover">
+					<a href="">中外团队∨</a>
+					<ul class="ul2">
+						<li><a href=""></a></li>
+						<li><a href="/pro/team.html">外国导师</a></li>
+						<li><a href="/pro/team.html">中国导师</a></li>
+					</ul>
+				</li>
+				<li class="_hover">
+					<a href="">案例评价∨</a>
+					<ul class="ul2">
+						<li><a href=""></a></li>
+						<li><a href="/pro/successful.html">成功案例</a></li>
+						<li><a href="">客户评价</a></li>
+					</ul>
+				</li>
+				<li class="_hover">
+					<a href="">免费资源∨</a>
+					<ul class="ul2">
+						<li><a href=""></a></li>
+						<li><a href="/pro/experience.html">经验干货</a></li>
+						<li><a href="/pro/excellentDoc.html">文书锦囊</a></li>
+						<li><a href="">免费咨询</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!--轮播图片-->
+	<div class="lunbotu">
+		<div id="btn_left"></div>
+		<ul id="ul_imgs">
+			<li>
+				<a href="">
+					<img src="../firstpaper/lunbotu1.jpg" alt="这是轮播广告图">
+				</a>
+			</li>
+			<li>
+				<a href="">
+					<img src="../firstpaper/lunbotu2.jpg" alt="">
+				</a>
+			</li>
+			<li>
+				<a href="">
+					<img src="../firstpaper/lunbotu3.jpg" alt="">
+				</a>
+			</li>
+			<li>
+				<a href="">
+					<img src="../firstpaper/lunbotu1.jpg" alt="">
+				</a>
+			</li>
+		</ul>
+		<div id="btn_right"></div>
+  </div>
+	<!--我们的服务-->
+	<div id="server">
+		<div id="search1">
+			<input type="text" placeholder="请输入你的专业">	
+		</div>
+		<h2 class="hh2">我们的服务</h2>
+		<ul class="ul1">
+			<li>
+				<img src="../image/icon-document1.png" alt="">
+				<p class="server1">文书服务</p>
+				<p>最全面的申请文书指导方案</p>
+			</li>
+			<li>
+				<img src="../image/icon-consulation1.png" alt="">
+				<p class="server1">留学咨询</p>
+				<p>名校顾问一对一点播迷津</p>
+			</li>
+			<li>
+				<img src="../image/icon-worryfree1.png" alt="">
+				<p class="server1">全程无忧</p>
+				<p>最负责的申请团队保驾护航</p>
+			</li>
+			<li>
+				<img src="../image/icon-onlineapplication1.png" alt="">
+				<p class="server1">网申填表</p>
+				<p>申请专家解决你的网申苦恼</p>
+			</li>
+			<!--<li>
+				<img src="../image/icon-papermodify1.png" alt="">
+				<p class="server1">论文修改</p>
+				<p>专业美籍编辑地道语言精修</p>
+			</li>
+			<li>
+				<img src="../image/icon-translation1.png" alt="">
+				<p class="server1">翻译服务</p>
+				<p>双语专家倾力呈现完美翻译</p>
+			</li>  -->
+		</ul>
+	</div>
+	<!--我们的团队-->
+	<div id="team">
+		<h2 class="hh2">我们的团队</h2>
+		<a href="">外国导师</a>
+		<a href="#ul2">中国导师</a>
+		<ul class="ul1">
+			<li>
+				<img src="../firstpaper/20161028044735442ff3.jpg" alt="">
+				<p>Gabs<br>Chief Editor</p>
+				<p>Emerson College<br>Master of Arts in Publishing<br>and Writing</p>
+			</li>
+			<li>
+				<img src="../firstpaper/201610280423378-3-88.jpg" alt="">
+				<p>Elizabeth B.<br>Senior Editor</p>
+				<p>University of California,<br>Berkeley<br>Ph.D. in Visual Culture</p>
+			</li>
+			<li>
+				<img src="../firstpaper/20161028043142e208e0.jpg" alt="">
+				<p>Fran L.<br>Senior Editor</p>
+				<p>Harvard University<br>Master in Urban Planning</p>
+			</li>
+			<li>
+				<img src="../firstpaper/201609110158057d0d17.png" alt="">
+				<p>Joshua V. Z.<br>Senior Editor</p>
+				<p>MIT<br>PhD in Biomedical<br>Engineering and Immunology</p>
+			</li>
+			<li>
+				<img src="../firstpaper/20190902165902bddbbf.jpg" alt="">
+				<p>Emily N.<br>Editor</p>
+				<p>University of Pittsburgh<br>Master in Public Health</p>
+			</li>
+		</ul>
+		<ul id="ul2" class="ul1">
+			<li>
+				<img src="../firstpaper/201610280426350374--.jpg" alt="">
+				<p>Gabs<br>Chief Editor</p>
+				<p>Emerson College<br>Master of Arts in Publishing<br>and Writing</p>
+			</li>
+			<li>
+				<img src="../firstpaper/20161028044816d5d3d3.jpg" alt="">
+				<p>Elizabeth B.<br>Senior Editor</p>
+				<p>University of California,<br>Berkeley<br>Ph.D. in Visual Culture</p>
+			</li>
+			<li>
+				<img src="../firstpaper/2016091404154473a3-1.png" alt="">
+				<p>Fran L.<br>Senior Editor</p>
+				<p>Harvard University<br>Master in Urban Planning</p>
+			</li>
+			<li>
+				<img src="../firstpaper/20161028042709-d92a4.jpg" alt="">
+				<p>Joshua V. Z.<br>Senior Editor</p>
+				<p>MIT<br>PhD in Biomedical<br>Engineering and Immunology</p>
+			</li>
+			<li>
+				<img src="../firstpaper/201710131719028-ee--.png" alt="">
+				<p>Emily N.<br>Editor</p>
+				<p>University of Pittsburgh<br>Master in Public Health</p>
+			</li>
+		</ul>
+		<a href="" id="look">查看导师团队</a>
+	</div>
+	<!--更多资源-->
+	<div id="more-res">
+		<h2 class="hh2">更多资源</h2>
+		<div>
+			<a href="">
+				<img src="../image/index/experience.png" alt="">
+				<div class="maskContent">
+					<h2><strong>经验干货</strong></h2>
+					<p>海量留学申请经验文章</p>
+				</div>
+			</a>
+			<a href="">
+				<img src="../image/index/excellentDoc.png" alt="">
+				<div class="maskContent">
+					<h2><strong>文书锦囊</strong></h2>
+					<p>热门专业申请文书典范</p>
+				</div>
+			</a>
+			<a href="">
+				<img src="../image/index/successful.png" alt="">
+				<div class="maskContent">
+					<h2><strong>成功案例</strong></h2>
+					<p>真实客户故事与评价</p>
+				</div>
+			</a>
+			<a href="">
+				<img src="../image/index/freeConsultation.png" alt="">
+				<div class="maskContent">
+					<h2><strong>免费咨询</strong></h2>
+					<p>先试试免费咨询服务</p>
+				</div>
+			</a>
+		</div>
+	</div>
+	<!--评价-->
+	<div id="assess">
+		<h2 class="hh2">
+			<a href="">听听他们的评价</a>
+		</h2>
+		<div id="stu-say">
+			<div id="say1">
+				<div class="stu-ass">
+					<img src="../index/Vicky.jpeg" alt="">
+					<div>
+						<p>我的编辑修改的非常仔细，是字字句句的修改，留下的comments也很用心，不是泛泛而谈</p>
+						<h4>Vicky 文书润色修改服务</h4>
+					</div>
+				</div>
+				<div class="stu-ass">
+					<img src="../index/lixia.jpeg" alt="">
+					<div>
+						<p>想读的国际关系在美国有非常细的分支，Me留学给我对接的导师给我的分析非常到位，让我的选校思路明朗了很多。</p>
+						<h4>逆夏 咨询服务</h4>
+					</div>
+				</div>
+				<div class="stu-ass">
+					<img src="../index/Honeybee.jpeg" alt="">
+					<div>
+						<p>拿到的文书作品我很满意，各个环节都做的很好，特别是导师可以和我一对一的沟通，让我补充了很多细节的内容，感觉完全写出了我想表达的又表达不出来的内容。</p>
+						<h4>Honeybee 文书定制服务</h4>
+					</div>
+				</div>
+				<div class="stu-ass">
+					<img src="../index/lihang.jpg" alt="">
+					<div>
+						<p>商科文书题目很多，每个小题目老师细致和我讨论，推敲经历里的细节，用于不同的文书题目里。文书老师非常负责，因为东西部时差原因经常半夜麻烦老师修改文书，感激！</p>
+						<h4>Li Huang  文书全管家</h4>
+					</div>
+				</div>
+				<div class="stu-ass">
+					<img src="../index/Ariel.jpeg" alt="">
+					<div>
+						<p>文书评审还是很有必要的，让我知道自己的文书哪里不好，可以自己回去再根据老师的意见修改一下内容，再来润色修改语言</p>
+						<h4>Ariel 文书评审服务</h4>
+					</div>
+				</div>
+				<div class="stu-ass">
+					<img src="../index/siyao.jpg" alt="">
+					<div>
+						<p>特别满意！拿到稿子之后，发现几乎每句都改了。我初稿确实写的一般，感谢老师不断带我理顺思路，补充素材，感谢！</p>
+						<h4>Jenny 文书润色修改服务</h4>
+					</div>
+				</div>
+			</div>
+			<div id="say2">
+				<div></div>
+				<div></div>
+			</div>
+		</div>
+	</div>
+	<!-- 关于Me留学 -->
+	<div class="footer_bg">
+		<ul class="left">
+			<li><h3>关于Me留学</h3></li>
+			<li><a href="">关于我们</a></li>
+			<li><a href="">加入我们</a></li>
+			<li><a href="">成为导师</a></li>
+			<li><a href="">校园大使</a></li>
+			<li><a href="">官方合作</a></li>
+			<li><a href="">隐私条款</a></li>
+		</ul>
+		<ul class="center">
+			<li><h3>发现精彩</h3></li>
+			<li><a href="">经验干货</a></li>
+			<li><a href="">文书锦囊</a></li>
+			<li><a href="">案例评价</a></li>
+			<li><a href="">免费咨询</a></li>
+			<li><a href="">优惠折扣</a></li>
+			<li><a href="">推荐有礼</a></li>
+		</ul>
+		<ul class="right">
+			<li><h3>联系我们</h3></li>
+			<li><a>美国 +1-626-232-0500</a></li>
+			<li><a>中国 400 0066 532</a></li>
+			<li>
+				<img src="../image/index/wechat1.jpg" alt="">
+				<img src="../image/index/wechat2.jpg" alt="">
+			</li>
+		</ul>
+	</div>
+	<!--end-->
+	<div id="end">
+		<h4>鲁ICP备16032272号</h4>
+		<h4>© 2017 Me Education, LLC. All Rights Reserved.</h4>
+	</div>
+</body>
+</html>

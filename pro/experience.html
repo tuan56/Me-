@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>经验干货</title>
+  <style>
+    *{margin:0;padding:0;}
+    a{text-decoration:none;}
+    ul>li{list-style:none;}
+    /*注册/登录*/
+		#login{
+			height:40px;
+			background:#EEEDEF;
+			line-height:40px;
+			position:relative;
+		}
+		#login table{
+			position:absolute;
+			right:20px;
+		}
+		#login a{
+			text-decoration:none;
+			color:#000;
+			padding:5px 10px;
+		}
+		/*导航栏*/
+		#leader{
+			width:100%;height:50px;
+			background:#fff;
+			padding-top:35px;
+			padding-bottom:15px;
+		}
+		#lea{
+			width:1140px;
+			height:34px;
+			margin:0 auto;
+			padding-top:15px;
+			display:flex;
+			justify-content:space-around;
+		}
+		.ul1{
+			display:flex;
+			justify-content:space-around;
+		}
+		#lea img{
+			width:150px;height:62px;
+			padding-right:40px;
+			position: relative;
+			top:-12px;
+		}
+		.ul1>li>a,.ul2 a{
+			width:160px;height:34px;
+			text-align:center;
+			line-height:34px;
+		}
+		.ul1>li>a{
+			color:#000;
+			text-decoration:none;
+			font-size:15px;
+			float:left;
+			border-radius:3px;
+			margin-right:2px;
+		}
+		.ul1 .home,.ul1>li>a:hover,.ul2 a:hover{
+			background:#F39801;
+			color:#fff;
+		}
+		.ul2{
+			display:none;
+			background-color:#fff
+		}
+		._hover:hover .ul2{
+			display:block;
+		}
+		._hover{
+			z-index:999;
+		}
+		.ul2 a{
+			display:block;
+			color:#777;
+			font-size:14px;
+			font-weight:400;
+			border-bottom:1px solid #e7e7e7;
+		}
+    /* content */
+    .tp-banner{
+      width:100%;height:85px;
+      margin-top:20px;
+      margin-bottom: 20px;
+    }
+    #content{
+      width:930px;
+      margin: 50px auto;
+      display:flex;
+      justify-content:space-around;
+    }
+    #left{
+      width:165px;
+    }
+    #left>ul a{
+      width:125px;height:28px;
+      border-radius:4px;
+      background-color:#fff;
+      color:#f39801;
+      display:block;
+      padding:10px;
+      margin-top: 10px;
+      line-height:28px;
+    }
+    #left>ul a:hover{
+      background-color: #F39801;
+      color:#EEEDEF;
+      border-radius: 4px;
+    }
+    #right{
+      width:690px;
+      padding:30px;
+      border-left:1px solid #ddd;
+    }
+    .box{
+      width:700px;
+      display:flex;
+      justify-content:space-around;
+      padding-bottom:20px;
+    }
+    .in_left>img{
+      width: 142px;height: 150px;
+      padding-right:30px;
+      padding-left:15px;
+    }
+    .in_right{
+      width:516px;height:104px;
+    }
+    .in_right>a{
+      font-size:18px;
+      color:#696969;
+    }
+    .in_right>a:hover{
+      color:#F39801;
+    }
+    .in_right>h6{
+      font-size: 13px;
+      color: #bbbabe;
+      font-weight:normal;
+      margin-top:30px;
+      margin-bottom:10px;
+    }
+    .in_right>p{
+      font-size:15px;
+      color:#696969;
+    }
+    /*关于Me留学*/
+		.footer_bg{
+			width:100%;height:276px;
+			padding:90px 0;
+			background:#3F4451;
+			display:flex;
+			justify-content:space-around;
+		}
+		.footer_bg>ul>li>h3{
+			font-size:21px;
+			color:#fff;
+			margin-top:15px;
+			margin-bottom:35px;
+		}
+		.footer_bg>ul>li>a{
+			font-size:15px;
+			color:#999eab;
+			line-height:2;
+		}
+		.right img{
+			width:99px;height:119px;
+		}
+		/*end*/
+		#end{
+			width:100%;height:86px;
+			background:#363B48;
+			padding-top:15px;
+		}
+		#end>h4{
+			text-align:center;
+			color:#fff;
+			font-weight:300;
+			line-height:36px;
+		}
+  </style>
+</head>
+<body>
+  <!--注册/登录栏-->
+	<div id="login">
+    <table>
+      <tr>
+        <td><a href="#logbox">注册/登录</a></td>
+        <td><a href="">常见问题</a></td>
+        <td><a href="">English</a></td>
+      </tr>
+    </table>
+  </div>
+  <!--导航栏-->
+	<div id="leader">
+    <div id="lea">
+      <div>
+        <img src="../logo/logo-website-01.png" alt="">
+      </div>
+      <ul class="ul1">
+        <!-- <li>
+          <img src="../logo/logo-website-01.png" alt="">
+        </li> -->
+        <li>
+          <a href="" class="home">首页</a>
+        </li>
+        <li class="_hover">
+          <a href="" >文书服务∨</a>
+          <ul class="ul2">
+            <li><a href=""></a></li>
+            <li><a href="/pro/docOutline.html">文书大纲</a></li>
+            <li><a href="">文书评审</a></li>
+            <li><a href="">文书润色修改</a></li>
+            <li><a href="">文书定制</a></li>
+            <li><a href="">文书翻译</a></li>
+            <li><a href="">文书全管家</a></li>
+            <li><a href="">论文精修</a></li>
+          </ul>
+        </li>
+        <li class="_hover">
+          <a href="">申请服务∨</a>
+          <ul class="ul2">
+            <li><a href=""></a></li>
+            <li><a href="/pro/update.html">全程无忧</a></li>
+            <li><a href="">留学咨询</a></li>
+            <li><a href="">网申填表</a></li>
+          </ul>
+        </li>
+        <li class="_hover">
+          <a href="">中外团队∨</a>
+          <ul class="ul2">
+            <li><a href=""></a></li>
+            <li><a href="/pro/team.html">外国导师</a></li>
+            <li><a href="/pro/team.html">中国导师</a></li>
+          </ul>
+        </li>
+        <li class="_hover">
+          <a href="">案例评价∨</a>
+          <ul class="ul2">
+            <li><a href=""></a></li>
+            <li><a href="/pro/successful.html">成功案例</a></li>
+            <li><a href="">客户评价</a></li>
+          </ul>
+        </li>
+        <li class="_hover">
+          <a href="">免费资源∨</a>
+          <ul class="ul2">
+            <li><a href=""></a></li>
+            <li><a href="/pro/experience.html">经验干货</a></li>
+            <li><a href="/pro/excellentDoc.html">文书锦囊</a></li>
+            <li><a href="">免费咨询</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- 经验干货 -->
+  <div class="tp-banner">
+    <img src="../image/university/leader.png" alt="">
+  </div>
+  <div id="content">
+    <!-- 左边栏 -->
+    <div id="left">
+      <ul>
+        <li>
+          <a href="">申请攻略</a>
+        </li>
+        <li>
+          <a href="">文书创作</a>
+        </li>
+        <li>
+          <a href="">留学考试</a>
+        </li>
+        <li>
+          <a href="">留学新闻</a>
+        </li>
+        <li>
+          <a href="">留学生活</a>
+        </li>
+      </ul>
+    </div>
+    <!-- 右边栏 -->
+    <div id="right">
+      <!-- 申请攻略 -->
+      <div>
+        <div class="box">
+          <div class="in_left">
+            <img src="../image/experience/1_1.webp" alt="">
+          </div>
+          <div class="in_right">
+            <a href="">走进上升势头强劲的美国黑马院校——东北大学</a>
+            <h6>Me留学 2019-10-10 10:31:32</h6>
+            <p>这是一枚你不能错过的潜力股！</p>
+          </div>
+        </div>
+        <div class="box">
+          <div class="in_left">
+            <img src="../image/experience/2_1.jpg" alt="">
+          </div>
+          <div class="in_right">
+            <a href="">经验谈：申请美研名校得从大一开始准备</a>
+            <h6>Me留学 2019-10-10 10:31:32</h6>
+            <p>合理利用四年本科时光，是迈向世界顶尖名校的第一步。</p>
+          </div>
+        </div>
+        <div class="box">
+          <div class="in_left">
+            <img src="../image/experience/3_1.jpg" alt="">
+          </div>
+          <div class="in_right">
+            <a href="">去美国读CS,求职求学都得狠下功夫</a>
+            <h6>Me留学 2019-10-10 10:31:32</h6>
+            <p>去美国读CS，求职求学都得狠下功夫</p>
+          </div>
+        </div>
+        <div class="box">
+          <div class="in_left">
+            <img src="../image/experience/4_1.jpg" alt="">
+          </div>
+          <div class="in_right">
+            <a href="">北美Ph.D.申请以及跨专业申请金融工程</a>
+            <h6>Me留学 2019-10-10 10:31:32</h6>
+            <p>土木博士，CS硕士，金融工程硕士......大牛的学业职业规划原来是这样的！</p>
+          </div>
+        </div>
+        <div class="box">
+          <div class="in_left">
+            <img src="../image/experience/5_1.jpg" alt="">
+          </div>
+          <div class="in_right">
+            <a href="">去美国读数据分析必须了解的事</a>
+            <h6>Me留学 2019-10-10 10:31:32</h6>
+            <p>去美国读数据分析必须了解的事</p>
+          </div>
+        </div>
+        <div class="box">
+          <div class="in_left">
+            <img src="../image/experience/6_1.jpg" alt="">
+          </div>
+          <div class="in_right">
+            <a href="">高考出分后，你还可以申请金秋入学的美国大学</a>
+            <h6>Me留学 2019-10-10 10:31:32</h6>
+            <p>用高考分数，申请美国大学。还来得及！</p>
+          </div>
+        </div>
+        <div class="box">
+          <div class="in_left">
+            <img src="../image/experience/7_1.jpeg" alt="">
+          </div>
+          <div class="in_right">
+            <a href="">Appeal Letter | 抢救拒信和Waitlist的关键</a>
+            <h6>Me留学 2019-10-10 10:31:32</h6>
+            <p>教你如何逆转申请结果</p>
+          </div>
+        </div>
+        <div class="box">
+          <div class="in_left">
+            <img src="../image/experience/8_1.jpg" alt="">
+          </div>
+          <div class="in_right">
+            <a href="">拿到心仪的offer，你以为申请就结束了？too young too simple!</a>
+            <h6>Me留学 2019-10-10 10:31:32</h6>
+            <p>Are you ready?!</p>
+          </div>
+        </div>
+        <div class="box">
+          <div class="in_left">
+            <img src="../image/experience/9_1.jpg" alt="">
+          </div>
+          <div class="in_right">
+            <a href="">AI科技与热门的AI Master Program到底是什么</a>
+            <h6>Me留学 2019-10-10 10:31:32</h6>
+            <p>和Me留学一起探秘没出校门就被高薪预定的AI</p>
+          </div>
+        </div>
+        <div class="box">
+          <div class="in_left">
+            <img src="../image/experience/10_1.jpg" alt="">
+          </div>
+          <div class="in_right">
+            <a href="">AI科技与热门的AI Master Program到底是什么</a>
+            <h6>Me留学 2019-10-10 10:31:32</h6>
+            <p>和Me留学一起探秘没出校门就被高薪预定的AI</p>
+          </div>
+        </div>
+        <div class="box">
+          <div class="in_left">
+            <img src="../image/experience/11_1.jpg" alt="">
+          </div>
+          <div class="in_right">
+            <a href="">AI科技与热门的AI Master Program到底是什么</a>
+            <h6>Me留学 2019-10-10 10:31:32</h6>
+            <p>和Me留学一起探秘没出校门就被高薪预定的AI</p>
+          </div>
+        </div>
+        <div class="box">
+          <div class="in_left">
+            <img src="../image/experience/12_1.jpg" alt="">
+          </div>
+          <div class="in_right">
+            <a href="">AI科技与热门的AI Master Program到底是什么</a>
+            <h6>Me留学 2019-10-10 10:31:32</h6>
+            <p>和Me留学一起探秘没出校门就被高薪预定的AI</p>
+          </div>
+        </div>
+        <div class="box">
+          <div class="in_left">
+            <img src="../image/experience/13_1.jpg" alt="">
+          </div>
+          <div class="in_right">
+            <a href="">AI科技与热门的AI Master Program到底是什么</a>
+            <h6>Me留学 2019-10-10 10:31:32</h6>
+            <p>和Me留学一起探秘没出校门就被高薪预定的AI</p>
+          </div>
+        </div>
+        <div class="box">
+          <div class="in_left">
+            <img src="../image/experience/14_1.png" alt="">
+          </div>
+          <div class="in_right">
+            <a href="">AI科技与热门的AI Master Program到底是什么</a>
+            <h6>Me留学 2019-10-10 10:31:32</h6>
+            <p>和Me留学一起探秘没出校门就被高薪预定的AI</p>
+          </div>
+        </div>
+        <div class="box">
+          <div class="in_left">
+            <img src="../image/experience/15_1.jpg" alt="">
+          </div>
+          <div class="in_right">
+            <a href="">AI科技与热门的AI Master Program到底是什么</a>
+            <h6>Me留学 2019-10-10 10:31:32</h6>
+            <p>和Me留学一起探秘没出校门就被高薪预定的AI</p>
+          </div>
+        </div>
+        <div class="box">
+          <div class="in_left">
+            <img src="../image/experience/16_1.jpg" alt="">
+          </div>
+          <div class="in_right">
+            <a href="">AI科技与热门的AI Master Program到底是什么</a>
+            <h6>Me留学 2019-10-10 10:31:32</h6>
+            <p>和Me留学一起探秘没出校门就被高薪预定的AI</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 关于Me留学 -->
+	<div class="footer_bg">
+    <ul class="left">
+      <li><h3>关于Me留学</h3></li>
+      <li><a href="">关于我们</a></li>
+      <li><a href="">加入我们</a></li>
+      <li><a href="">成为导师</a></li>
+      <li><a href="">校园大使</a></li>
+      <li><a href="">官方合作</a></li>
+      <li><a href="">隐私条款</a></li>
+    </ul>
+    <ul class="center">
+      <li><h3>发现精彩</h3></li>
+      <li><a href="">经验干货</a></li>
+      <li><a href="">文书锦囊</a></li>
+      <li><a href="">案例评价</a></li>
+      <li><a href="">免费咨询</a></li>
+      <li><a href="">优惠折扣</a></li>
+      <li><a href="">推荐有礼</a></li>
+    </ul>
+    <ul class="right">
+      <li><h3>联系我们</h3></li>
+      <li><a>美国 +1-626-232-0500</a></li>
+      <li><a>中国 400 0066 532</a></li>
+      <li>
+        <img src="../image/index/wechat1.jpg" alt="">
+        <img src="../image/index/wechat2.jpg" alt="">
+      </li>
+    </ul>
+  </div>
+  <!--end-->
+  <div id="end">
+    <h4>鲁ICP备16032272号</h4>
+    <h4>© 2017 Me Education, LLC. All Rights Reserved.</h4>
+  </div>
+</body>
+</html>

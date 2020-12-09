@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>全程无忧</title>
+  <style>
+    *{margin:0;padding:0;}
+		a{text-decoration:none;}
+		ul{list-style:none;}
+		/*注册/登录*/
+    #login{
+      height:40px;
+      background:#EEEDEF;
+      line-height:40px;
+      position:relative;
+    }
+    #login table{
+      position:absolute;
+      right:20px;
+    }
+    #login a{
+      text-decoration:none;
+      color:#000;
+      padding:5px 10px;
+    }
+    /*导航栏*/
+    #leader{
+      width:100%;height:50px;
+      background:#fff;
+      padding-top:35px;
+      padding-bottom:15px;
+    }
+    #lea{
+      width:1140px;
+			height:34px;
+			margin:0 auto;
+			padding-top:15px;
+			display:flex;
+			justify-content:space-around;
+    }
+    .ul1{
+      display:flex;
+			justify-content:space-around;
+    }
+    #lea img{
+      width:150px;height:62px;
+      padding-right:40px;
+      position: relative;
+      top:-12px;
+    }
+    .ul1>li>a,.ul2 a{
+      width:160px;height:34px;
+      text-align:center;
+      line-height:34px;
+    }
+    .ul1>li>a{
+      color:#000;
+      text-decoration:none;
+      font-size:15px;
+      float:left;
+      border-radius:3px;
+      margin-right:2px;
+    }
+    .ul1 .home,.ul1>li>a:hover,.ul2 a:hover{
+      background:#F39801;
+      color:#fff;
+    }
+    .ul2{
+      display:none;
+      background-color:#fff
+    }
+    ._hover:hover .ul2{
+      display:block;
+    }
+    ._hover{
+			z-index:999;
+		}
+    .ul2 a{
+      display:block;
+      color:#777;
+      font-size:14px;
+      font-weight:400;
+      border-bottom:1px solid #e7e7e7;
+    }
+    /*header*/
+    .headerOfDoc{
+      width:100%;height:353px;
+			text-align: center;
+      position: relative;
+      margin:20px auto;
+      margin-bottom:100px;
+      background-image:url(../image/upload/freeWorry.png);
+      padding-top:30px;
+    }
+    .headerOfDoc>p,.headerOfDoc>h2{
+      color:#fff;
+      padding-top: 12px;
+    }
+    .headerOfDoc>p{
+      font-size: 45px;
+      padding-bottom: 12px;
+    }
+    .headerOfDoc>h2{
+      font-size:22px;
+      font-weight:400;
+    }
+    #search_book{
+      text-align:center;
+      margin-top: 25px;
+      margin-bottom: 25px;
+    }
+    #search_book>a{
+      width:194px;height:31px;
+      display:inline-block;
+      border:1px solid #fff;
+      border-radius: 15px;
+      padding:6px 12px;
+      text-align: center;
+    }
+    #search_book>a:hover{
+      background-color: #F39801;
+      border: 0;
+    }
+    #search_book>a>#words{
+      display: inline-block;
+      font-size:22px;
+      color: #fff;
+      font-weight:bold;
+    }
+		/*/五对一申请团队/*/
+		.f1,.f2,.f3,.f4{
+			text-align: center;
+		}
+		.words>h2{
+			text-align: center;
+			font-size: 28px;
+			color:#F39801;
+			font-weight:bold;
+		}
+		.words>p{
+			width: 540px;height: 60px;
+			text-align: center;
+			color:#a1a1a1;
+			font-size:16px;
+			font-family: "Droid Serif",Georgia,"Times New Roman",serif;
+			margin:20px auto;
+			line-height: 30px;
+		}
+		.people,.icon,.price_list,.success_eg{
+			width:1170px;
+			margin:0px auto;
+			margin-top:50px;
+		}
+		.people>ul{
+			display:flex;
+			justify-content:space-around;
+		}
+		.people>ul>li{
+			width:196px;height:336px;
+			border:2px solid #EDECF0;
+			border-radius:20px 15px;
+			padding:5px;margin:5px;
+		}
+		.people>ul>li:hover{
+			background-color:#eee;
+		}
+		.people li>img{
+			width:180px;height:180px;
+			border-radius:50%;
+		}
+		.people li>p{
+			color:#777;
+			font-size: 13px;
+			margin:30px 0 30px 0;
+			line-height: 23px;
+		}
+		#look{
+			width:84px;height:20px;
+			padding:6px 12px;
+			font-size:14px;
+			text-align:center;
+			vertical-align:middle;
+			border:1px solid #f39801;
+			border-radius:5px;
+			color:#f39801;
+			display:inline-block;
+			margin:50px;
+		}
+		#look:hover{
+			background-color:#f39801;
+			color:#fff;
+		}
+		/*无忧流程*/
+		.f2{
+			width:100%;height:553px;
+			background-color: #EDECF0;
+			padding-top:60px;
+		}
+		.icon>ul{
+			display:flex;
+			justify-content:space-around;
+			margin-top:70px;
+		}
+		.icon img{
+			width: 80px;height: 80px;
+		}
+		.icon li>p{
+			font-size: 22px;
+			color:#898989;
+			text-align: center;
+		}
+		/*价格*/
+		.f3{
+			padding-top:80px;
+		}
+		.price_list{
+			line-height:183px;
+			margin-top:90px;
+			margin-bottom: 110px;
+		}
+		.price_list,.success_eg{
+			display:flex;
+			justify-content:space-around;
+		}
+		.price_list>img,.success_eg>img{
+			width:50px;height:50px;
+			padding-top:70px;
+		}
+		.price_list li{
+			width:182px;height:38px;
+			background-color: #F3F2F6;
+			color:#F39801;
+			font-size: 20px;
+			margin-top:3px;
+			padding:10px 15px;
+			line-height: 38px;
+		}
+		.price_list li:first-child{
+			color:#777;
+			border-radius:20px 20px 0 0;
+		}
+		.price_list li:last-child{
+			border-radius:0 0 20px 20px;
+		}
+		/*成功案例*/
+		.f4{
+			background-color: #EDECF0;
+		}
+		.f4 .words{
+			padding-top:70px;
+		}
+		.f4 .words>p{
+			height:30px;
+			margin-top:10px;
+		}
+		.f4 .words>a{
+			font-size:18px;
+			font-weight: bold;
+			color: #F39801;
+		}
+		.f4 .success_eg{
+			margin-top:40px;
+		}
+		.f4 .success_eg>img{
+			padding-top:170px;
+		}
+		.f4 .stu1{
+			width:277px;height:368px;
+			background-color: #fff;
+			border-radius:15px;
+		}
+		.f4 .stu1>img{
+			width:277px;height:194px;
+			border-radius:15px 15px 0 0;
+		}
+		.f4 .stu1>h3{
+			font-size:18px;
+			color:#363a47;
+			margin-top:20px;
+			font-weight:normal;
+		}
+		.f4 .stu1>p{
+			font-size:15px;
+			color:rgb(119, 119, 119);
+			margin-top:30px;
+		}
+		.f4>ul{
+			width:500px;
+			display:flex;
+			justify-content:space-around;
+			margin:0 auto;
+			padding:60px 0;
+		}
+		.f4>ul a{
+			width: 220px;height: 42px;
+			text-align: center;
+			line-height: 40px;
+			background-color: #F39801;
+			color:#fff;
+			border-radius:15px;
+			font-size: 20px;
+			font-weight: 600;
+			display:block;
+		}
+		.f4>ul a:hover{
+			transition:all .1s linear; 
+		}
+		/*关于Me留学*/
+		.footer_bg{
+    width:100%;height:276px;
+    padding:90px 0;
+    background:#3F4451;
+    display:flex;
+    justify-content:space-around;
+  }
+  .footer_bg>ul>li>h3{
+    font-size:21px;
+    color:#fff;
+    margin-top:15px;
+    margin-bottom:35px;
+  }
+  .footer_bg>ul>li>a{
+    font-size:15px;
+    color:#999eab;
+    line-height:2;
+  }
+  .right img{
+    width:99px;height:119px;
+  }
+  /*end*/
+  #end{
+    width:100%;height:86px;
+    background:#363B48;
+    padding-top:15px;
+  }
+  #end>h4{
+    text-align:center;
+    color:#fff;
+    font-weight:300;
+    line-height:36px;
+  }
+  </style>
+</head>
+<body>
+  <!--注册/登录栏-->
+  <div id="login">
+		<table>
+			<tr>
+				<td><a href="#logbox">注册/登录</a></td>
+				<td><a href="">常见问题</a></td>
+				<td><a href="">English</a></td>
+			</tr>
+		</table>
+	</div>
+	<!--导航栏-->
+	<div id="leader">
+		<div id="lea">
+			<div>
+				<img src="../logo/logo-website-01.png" alt="">
+			</div>
+			<ul class="ul1">
+				<!-- <li>
+					<img src="../logo/logo-website-01.png" alt="">
+				</li> -->
+				<li>
+					<a href="" class="home">首页</a>
+				</li>
+				<li class="_hover">
+					<a href="" >文书服务∨</a>
+					<ul class="ul2">
+						<li><a href=""></a></li>
+						<li><a href="/pro/docOutline.html">文书大纲</a></li>
+						<li><a href="">文书评审</a></li>
+						<li><a href="">文书润色修改</a></li>
+						<li><a href="">文书定制</a></li>
+						<li><a href="">文书翻译</a></li>
+						<li><a href="">文书全管家</a></li>
+						<li><a href="">论文精修</a></li>
+					</ul>
+				</li>
+				<li class="_hover">
+					<a href="">申请服务∨</a>
+					<ul class="ul2">
+						<li><a href=""></a></li>
+						<li><a href="/pro/update.html">全程无忧</a></li>
+						<li><a href="">留学咨询</a></li>
+						<li><a href="">网申填表</a></li>
+					</ul>
+				</li>
+				<li class="_hover">
+					<a href="">中外团队∨</a>
+					<ul class="ul2">
+						<li><a href=""></a></li>
+						<li><a href="/pro/team.html">外国导师</a></li>
+						<li><a href="/pro/team.html">中国导师</a></li>
+					</ul>
+				</li>
+				<li class="_hover">
+					<a href="">案例评价∨</a>
+					<ul class="ul2">
+						<li><a href=""></a></li>
+						<li><a href="/pro/successful.html">成功案例</a></li>
+						<li><a href="">客户评价</a></li>
+					</ul>
+				</li>
+				<li class="_hover">
+					<a href="">免费资源∨</a>
+					<ul class="ul2">
+						<li><a href=""></a></li>
+						<li><a href="/pro/experience.html">经验干货</a></li>
+						<li><a href="/pro/excellentDoc.html">文书锦囊</a></li>
+						<li><a href="">免费咨询</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+  <!--header-->
+  <div class="headerOfDoc">
+    <p>全程无忧</p>
+    <h2>无忧高端申请 保证客户拿到理想的Offer</h2>
+    <h2>个性定制方案 根据客户背景制定申请方案</h2>
+    <div id="search_book">
+      <a href="">
+        <span id="words">立即预约</span>
+      </a>
+    </div>
+	</div>
+	<!--/五对一申请团队/-->
+	<div class="f1">
+		<div class="words">
+			<h2>/五对一申请团队/</h2>
+			<p>同专业领域咨询师、明星文书导师、外籍文书专家、面试培训专家、无忧申请管家全程陪伴，为你组队，帮助申请者直击Dream School</p>
+		</div>
+		<div class="people">
+			<ul>
+				<li>
+					<img src="../firstpaper/201610280426350374--.jpg" alt="">
+					<p>同专业领域资深导师全程陪伴,全面剖析申请者背景,明确定位和申请目标,对专业领域任何相关问题进行把关和解决方法指导.</p>
+				</li>
+				<li>
+					<img src="../firstpaper/20161028044816d5d3d3.jpg" alt="">
+					<p>明星文书导师全面分析申请者经历和目标学校要求,深度沟通互动,根据申请者背景和申请目标学校个性定制全套文书.</p>
+				</li>
+				<li>
+					<img src="../firstpaper/20161028044735442ff3.jpg" alt="">
+					<p>外籍文书顾问把关每一篇申请文书质量,深度修改文书内容,转换中式逻辑思维,确保文书地道准确传达申请者申请优势.</p>
+				</li>
+				<li>
+					<img src="../firstpaper/201610280423378-3-88.jpg" alt="">
+					<p>美国名校录取招生官亲自进行面试培训指导和模拟面试,短时间内提高申请者面试技巧,自信传达申请者自身优势.</p>
+				</li>
+				<li>
+					<img src="../firstpaper/teacher5.png" alt="">
+					<p>无忧申请管家全程贴心服务,帮助合理规划申请时间,提示申请细节、帮助材料准备、签证申请、指导申请每一步.</p>
+				</li>
+			</ul>
+		</div>
+		<a href="" id="look">查看导师团队</a>
+	</div>
+	<!--/无忧流程/-->
+	<div class="f2">
+		<div class="words">
+			<h2>/无忧流程/</h2>
+		</div>
+		<div class="icon">
+			<ul>
+				<li>
+					<img src="../image/upload/icon.png" alt="">
+					<p>定位选校</p>
+				</li>
+				<img src="../image/upload/right.png" alt="">
+				<li>
+					<img src="../image/upload/icon1.png" alt="">
+					<p>背景提升</p>
+				</li>
+				<img src="../image/upload/right.png" alt="">
+				<li>
+					<img src="../image/upload/icon2.png" alt="">
+					<p>全套文书</p>
+				</li>
+				<img src="../image/upload/right.png" alt="">
+				<li>
+					<img src="../image/upload/icon3.png" alt="">
+					<p>网申填表</p>
+				</li>
+			</ul>
+			<ul>
+				<li>
+					<img src="../image/upload/icon4.png" alt="">
+					<p>面试辅导</p>
+				</li>
+				<img src="../image/upload/right.png" alt="">
+				<li>
+					<img src="../image/upload/icon5.png" alt="">
+					<p>签证辅导</p>
+				</li>
+				<img src="../image/upload/right.png" alt="">
+				<li>
+					<img src="../image/upload/icon6.png" alt="">
+					<p>行前指导</p>
+				</li>
+				<img src="../image/upload/right.png" alt="">
+				<li>
+					<img src="../image/upload/icon6.png" alt="">
+					<p>全程无忧</p>
+				</li>
+			</ul>
+		</div>
+		<a href="" id="look">了解服务流程</a>
+	</div>
+	<!--/价格/-->
+	<div class="f3">
+		<div class="words">
+			<h2>/价格/</h2>
+		</div>
+		<div class="price_list">
+			<img src="../image/services/leftGrayIcon.png" alt="">
+			<ul>
+				<li>美国本科/转学</li>
+				<li>55800元起</li>
+				<li>10个项目内</li>
+			</ul>
+			<ul>
+				<li>美国硕/博</li>
+				<li>45800元起</li>
+				<li>10个项目内</li>
+			</ul>
+			<ul>
+				<li>加拿大本/硕</li>
+				<li>35800元起</li>
+				<li>8个项目内</li>
+			</ul>
+			<ul>
+				<li>英国本/硕</li>
+				<li>15800元起</li>
+				<li>6个项目内</li>
+			</ul>
+			<!--<ul>
+				<li>澳洲本/硕</li>
+				<li>10800元起</li>
+				<li>5个项目内</li>
+			</ul>
+			<ul>
+				<li>香港/新加坡硕士</li>
+				<li>17800元起</li>
+				<li>6个项目内</li>
+			</ul>-->
+			<img src="../image/services/icon8.png" alt="">
+		</div>
+	</div>
+	<!--/成功案例/-->
+	<div class="f4">
+		<div class="words">
+			<h2>/成功案例/</h2>
+			<p>做最负责的留学机构，帮助客户冲刺最理想的院校</p>
+			<a href="">点击查看更多成功案例</a>
+		</div>
+		<div class="success_eg">
+			<img src="../image/services/rightGrayIcon.png" alt="">
+			<div class="stu1">
+				<img src="../image/upload/stu6.jpg" alt="">
+				<h3>施同学</h3>
+				<p>厦门大学本科化工专业</p>
+				<p>特拉华大学化工系全奖博士录取</p>
+			</div>
+			<div class="stu1">
+				<img src="../image/upload/stu5.jpg" alt="">
+				<h3>李同学</h3>
+				<p>厦门大学本科化工专业</p>
+				<p>特拉华大学化工系全奖博士录取</p>
+			</div>
+			<div class="stu1">
+				<img src="../image/upload/stu2.jpg" alt="">
+				<h3>孙同学</h3>
+				<p>厦门大学本科化工专业</p>
+				<p>特拉华大学化工系全奖博士录取</p>
+			</div>
+			<!-- <div class="stu1">
+				<img src="../image/upload/stu6.jpg" alt="">
+				<h3>施同学</h3>
+				<p>厦门大学本科化工专业</p>
+				<p>特拉华大学化工系全奖博士录取</p>
+			</div>
+			<div class="stu1">
+				<img src="../image/upload/stu5.jpg" alt="">
+				<h3>李同学</h3>
+				<p>厦门大学本科化工专业</p>
+				<p>特拉华大学化工系全奖博士录取</p>
+			</div>
+			<div class="stu1">
+				<img src="../image/upload/stu2.jpg" alt="">
+				<h3>孙同学</h3>
+				<p>厦门大学本科化工专业</p>
+				<p>特拉华大学化工系全奖博士录取</p>
+			</div> -->
+			<img src="../image/services/icon9.png" alt="">
+		</div>
+		<ul>
+			<li><a href="">我要咨询</a></li>
+			<li><a href="">立即预约</a></li>
+		</ul>
+	</div>
+	<!--关于Me留学-->
+	<div class="footer_bg">
+		<ul class="left">
+			<li><h3>关于Me留学</h3></li>
+			<li><a href="">关于我们</a></li>
+			<li><a href="">加入我们</a></li>
+			<li><a href="">成为导师</a></li>
+			<li><a href="">校园大使</a></li>
+			<li><a href="">官方合作</a></li>
+			<li><a href="">隐私条款</a></li>
+		</ul>
+		<ul class="center">
+			<li><h3>发现精彩</h3></li>
+			<li><a href="">经验干货</a></li>
+			<li><a href="">文书锦囊</a></li>
+			<li><a href="">案例评价</a></li>
+			<li><a href="">免费咨询</a></li>
+			<li><a href="">优惠折扣</a></li>
+			<li><a href="">推荐有礼</a></li>
+		</ul>
+		<ul class="right">
+			<li><h3>联系我们</h3></li>
+			<li><a>美国 +1-626-232-0500</a></li>
+			<li><a>中国 400 0066 532</a></li>
+			<li>
+				<img src="../image/index/wechat1.jpg" alt="">
+				<img src="../image/index/wechat2.jpg" alt="">
+			</li>
+		</ul>
+	</div>
+	<!--end-->
+	<div id="end">
+		<h4>鲁ICP备16032272号</h4>
+		<h4>© 2017 Me Education, LLC. All Rights Reserved.</h4>
+	</div>
+</body>
+</html>

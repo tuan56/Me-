@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<style>
+			*{margin:0;padding:0;}
+			body{background:#e8e8e8;}
+			#logbox{
+				width:470px;height:543px;
+				margin:0 auto;
+				background:#fff;
+				border-radius:10px;
+			}
+			#logbox div:first-child{
+				width:100%;height:39px;
+				position:relative;
+			}
+			#img1{
+				width:150px;height:39px;
+				position:absolute;
+				top:5px;left:10px;
+			}
+			#img2{
+				position:absolute;
+				top:10px;right:10px;
+			}
+			#logbox div:nth-child(2){
+				width:100%;height:41px;
+				padding:10px 0px;
+				border-bottom:2px solid #fff;
+				display:flex;
+				justify-content:space-around;
+			}
+			/*#logbox div:nth-child(2)>button{
+				width:180px;height:32px;
+				padding:0 15px;
+				margin-top:14px;
+			}*/
+			#login,#regist{
+				width:180px;height:32px;
+				padding:0 15px;
+				margin-top:14px;
+				text-decoration:none;
+				font-size:15px;
+				font-weight:bold;
+				color:#666;
+				border-radius:5px;
+				display:inline-block;
+				text-align:center;
+				line-height:32px;
+				
+			}
+			#logbox div:nth-child(3){
+				width:400px;height:398px;
+				margin:0 auto;
+				color:#777;
+				display:none;
+			}
+			#logbox div:nth-child(3):target{
+				display:block;
+			}
+			#uname,#email,#phone,#upwd,#cpwd{
+				width:374px;height:31px;
+				padding:6px 12px;
+				margin-bottom:15px;
+				border:1px solid #ddd;
+			}
+			#uname{
+				margin-top:10px;
+			}
+			#logbox div:nth-child(3)>button,#logbox div:nth-child(4)>button,#logbox div:nth-child(5)>button{
+				width:400px;height:50px;
+				background:#F39801;
+				border:0;
+				color:#fff;
+				font-weight:bold;
+				cursor:pointer;
+			}
+			#logbox div:nth-child(4){
+				width:400px;height:228px;
+				margin:0 auto;
+				display:none;
+			}
+			#logbox div:nth-child(4):target{
+				display:block;
+			}
+			#logbox div:nth-child(4)>#email{
+				margin-top:15px;
+			}
+			#logbox div:nth-child(4)>a,#logbox div:nth-child(5)>a{
+				display:block;
+				margin-top:15px;
+				text-align:center;
+				color:#888;
+			}
+			#logbox div:nth-child(5){
+				width:400px;height:60px;
+				margin:10px auto 0 auto;
+				display:none;
+			}
+			#logbox div:nth-child(5):target{
+				display:block;
+			}
+			#logbox div:nth-child(5)>#email1{
+				width:270px;height:31px;
+				padding:6px 12px;
+				margin:20px 0;
+				border:1px solid #ddd;
+			}
+			#logbox div:nth-child(5)>#bt{
+				width:76px;height:45px;
+				margin-left:20px;
+				background:#F39801;
+				border:0;
+				color:#fff;
+				font-weight:bold;
+				cursor:pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="logbox">
+			<div>
+				<img src="../logo/logo-orange-01.png" alt="" id="img1">
+				<a href="">
+					<img src="../logo/greyClose.png" alt="" id="img2">
+				</a>
+			</div>
+			<div>
+					<a href="#dl" id="login">登录</a>
+					<a href="#zc" id="regist">注册</a>
+			</div>
+			<div id="zc">
+				<label>请用最常用邮箱注册</label><br>
+				<input type="text" id="uname" placeholder="用户名*" onblur="checkUname()"><br>
+				<input type="text" id="email" placeholder="登录邮箱*"><br>
+				<input type="text" id="phone" placeholder="电话*"><br>
+				<input type="text" id="upwd" placeholder="登录密码*" onblur="checkUpwd()"><br>
+				<input type="text" id="cpwd" placeholder="确认密码*" onblur="checkCpwd()"><br>
+				<button onclick="register()">注册</button>
+			</div>
+			<div id="dl">
+				<input type="text" id="email" placeholder="登录邮箱*"><br>
+				<input type="text" id="upwd" placeholder="登录密码*"><br>
+				<button onclick="register()">注册</button>
+				<a href="#zhmm">忘记密码？</a>
+			</div>
+			<div id="zhmm">
+				<input type="text" id="email" placeholder="登录邮箱*"><br>
+				<input type="text" id="upwd" placeholder="登录密码*"><br>
+				<button onclick="login()">登录</button>
+				<a href="#zhmm">忘记密码？</a>
+				<input type="text" id="email1" placeholder="邮箱*">
+				<button type="submit" id="bt">找回密码</button>
+			</div>
+		</div>
+		<script>
+			function register(){
+				var $uname=uname.value;
+				//1.
+				var xhr=new XMLHttpRequest();
+				//4.
+				xhr.onreatystate=function(){
+					if(xhr.readyState==4&&xhr.status==200){
+						var result=xhr.responseText;
+						console.log(result);
+						if(result==1){
+							alert("用户名已存在");
+						}else if(result==0){
+							alert("");
+						}
+					}
+				}
+				//2.
+				xhr.open("get","/v1/checkuname/"+$uname,true);
+				//3.
+				xhr.send();
+			}
+			function checkUname(){
+				if(uname.value==""){
+					name_msg.innerHTML="用户名不能为空";
+				}else if(uname.value.length>12 || uname.value.length<6){
+					name_msg.innerHTML="用户名不合法";
+				}else{
+					name_msg.innerHTML="正确";
+				}
+			}
+			function checkUpwd(){
+				if(upwd.value==""){
+					pwd_msg.innerHTML="密码不能为空";
+				}else if(upwd.value.length>12 || upwd.value.length<6){
+				  pwd_msg.innerHTML="密码长度不合法";
+				}else{
+					pwd_msg.innerHTML="正确";
+				}
+			}
+			function checkCpwd(){
+				if(cpwd.value==""){
+					cpwd_msg.innerHTML="密码验证不能为空";
+				}else if(cpwd.value==pwd.value){
+					cpwd_msg.innerHTML="两次密码一致";
+				}else{
+					cpwd_msg.innerHTML="两次密码不一致";
+				}
+			}
+		</script>
+	</body>
+</html>

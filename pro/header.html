@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    *{margin:0;padding:0;}
+    a{text-decoration: none;}
+    ul{list-style:none;}
+    /*注册/登录*/
+    #login{
+      height:40px;
+      background:#EEEDEF;
+      line-height:40px;
+      position:relative;
+    }
+    #login table{
+      position:absolute;
+      right:20px;
+    }
+    #login a{
+      text-decoration:none;
+      color:#000;
+      padding:5px 10px;
+    }
+    /*导航栏*/
+    #leader{
+      width:100%;height:50px;
+      background:#fff;
+      padding-top:35px;
+      padding-bottom:15px;
+    }
+    #lea{
+      width:1140px;
+			height:34px;
+			margin:0 auto;
+			padding-top:15px;
+			display:flex;
+			justify-content:space-around;
+    }
+    .ul1{
+      display:flex;
+			justify-content:space-around;
+    }
+    #lea img{
+      width:150px;height:62px;
+      padding-right:40px;
+      position: relative;
+      top:-12px;
+    }
+    .ul1>li>a,.ul2 a{
+      width:160px;height:34px;
+      text-align:center;
+      line-height:34px;
+    }
+    .ul1>li>a{
+      color:#000;
+      text-decoration:none;
+      font-size:15px;
+      float:left;
+      border-radius:3px;
+      margin-right:2px;
+    }
+    .ul1 .home,.ul1>li>a:hover,.ul2 a:hover{
+      background:#F39801;
+      color:#fff;
+    }
+    .ul2{
+      display:none;
+      background-color:#fff
+    }
+    ._hover:hover .ul2{
+      display:block;
+    }
+    ._hover{
+			z-index:999;
+		}
+    .ul2 a{
+      display:block;
+      color:#777;
+      font-size:14px;
+      font-weight:400;
+      border-bottom:1px solid #e7e7e7;
+    }
+  </style>
+</head>
+<body>
+<div>
+  <!--注册/登录栏-->
+  <div id="login">
+    <table>
+      <tr>
+        <td><a href="#logbox">注册/登录</a></td>
+        <td><a href="">常见问题</a></td>
+        <td><a href="">English</a></td>
+      </tr>
+    </table>
+  </div>
+  <!--导航栏-->
+  <div id="leader">
+    <div id="lea">
+      <div><img src="../logo/logo-website-01.png" alt=""></div>
+      <ul class="ul1">
+        <!-- <li>
+          <img src="../logo/logo-website-01.png" alt="">
+        </li> -->
+        <li>
+          <a href="" class="home">首页</a>
+        </li>
+        <li class="_hover">
+          <a href="" >文书服务∨</a>
+          <ul class="ul2">
+            <li><a href=""></a></li>
+            <li><a href="">文书大纲</a></li>
+            <li><a href="">文书评审</a></li>
+            <li><a href="">文书润色修改</a></li>
+            <li><a href="">文书定制</a></li>
+            <li><a href="">文书翻译</a></li>
+            <li><a href="">文书全管家</a></li>
+            <li><a href="">论文精修</a></li>
+          </ul>
+        </li>
+        <li class="_hover">
+          <a href="">申请服务∨</a>
+          <ul class="ul2">
+            <li><a href=""></a></li>
+            <li><a href="">全程无忧</a></li>
+            <li><a href="">留学咨询</a></li>
+            <li><a href="">网申填表</a></li>
+          </ul>
+        </li>
+        <li class="_hover">
+          <a href="">中外团队∨</a>
+          <ul class="ul2">
+            <li><a href=""></a></li>
+            <li><a href="">外国导师</a></li>
+            <li><a href="">中国导师</a></li>
+          </ul>
+        </li>
+        <li class="_hover">
+          <a href="">案例评价∨</a>
+          <ul class="ul2">
+            <li><a href=""></a></li>
+            <li><a href="">成功案例</a></li>
+            <li><a href="">客户评价</a></li>
+          </ul>
+        </li>
+        <li class="_hover">
+          <a href="">免费资源∨</a>
+          <ul class="ul2">
+            <li><a href=""></a></li>
+            <li><a href="">经验干货</a></li>
+            <li><a href="">文书锦囊</a></li>
+            <li><a href="">免费咨询</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+</body>
+</html>
